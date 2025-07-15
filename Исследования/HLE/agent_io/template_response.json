@@ -1,0 +1,16 @@
+{
+  "task_id": "hle_phi_001",
+  "model": "MODEL_NAME",
+  "responses": [
+    {
+      "question_id": "hle_001",
+      "φⁿ": "STRING: Logical answer",
+      "reasoning_steps": [
+        "Step 1: ...",
+        "Step 2: ..."
+      ],
+      "Tₓ": 0.0,
+      "¬φⁿ": []
+    }
+  ]
+}

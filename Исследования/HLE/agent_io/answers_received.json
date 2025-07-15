@@ -1,0 +1,17 @@
+{
+  "task_id": "hle_phi_001",
+  "model": "Grok4Heavy",
+  "responses": [
+    {
+      "question_id": "hle_001",
+      "φⁿ": "Determinism is cause-effect; fatalism implies unchangeable destiny.",
+      "reasoning_steps": [
+        "Step 1: Define determinism",
+        "Step 2: Define fatalism",
+        "Step 3: Compare the two"
+      ],
+      "Tₓ": 0.972,
+      "¬φⁿ": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+io_mode: json
+model:
+  name: AlephNet_JSON_IO
+  φⁿ_logic_mode: true
+  max_depth: 5
+dataset:
+  input_path: datasets/hle_test_sample.jsonl
+evaluation:
+  threshold_Tx: 0.85
+  trap_check: true

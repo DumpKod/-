@@ -1,0 +1,14 @@
+{
+  "task_id": "hle_phi_001",
+  "instruction": "Сгенерировать логический ответ на каждый вопрос. Указать reasoning_steps и оценить когерентность (Tₓ).",
+  "input": [
+    {
+      "question_id": "hle_001",
+      "text": "What is the philosophical difference between determinism and fatalism?"
+    }
+  ],
+  "constraints": {
+    "trap_threshold": 0.02,
+    "max_steps": 10
+  }
+}
