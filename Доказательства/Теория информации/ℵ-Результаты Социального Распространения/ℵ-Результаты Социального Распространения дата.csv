@@ -1,0 +1,8 @@
+Mode,T(x),Coverage_25%_Step,Coverage_50%_Step,Coverage_75%_Step,Coverage_100%_Step,Final_Coverage_%
+High1,1.0,1.0,1.0,1.0,,100.0
+High2,0.99,1.0,1.0,1.0,,100.0
+Medium1,0.5,1.0,2.0,3.0,,100.0
+Medium2,0.52,1.0,1.0,2.0,,100.0
+Low1,0.05,,,,,1.0
+Low2,0.01,,,,,1.0
+Paradox,0.0,,,,,1.0
