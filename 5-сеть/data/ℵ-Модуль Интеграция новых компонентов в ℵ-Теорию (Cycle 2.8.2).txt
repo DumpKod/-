@@ -1,0 +1,139 @@
+# ℵ-Модуль: Интеграция новых компонентов в ℵ-Теорию (Cycle 2.8.2)
+
+import numpy as np
+import sympy as sp
+from scipy.integrate import solve_ivp
+from scipy.optimize import curve_fit
+import matplotlib.pyplot as plt
+import json
+
+# === ℵ-Символьное ядро ===
+x, t, phi, T_val = sp.symbols('x t phi T_val')
+gamma_xy, gamma_max, Delta, epsilon_t, lambda_val, c0 = sp.symbols('gamma_xy gamma_max Delta epsilon_t lambda_val c0')
+
+T_expr = (1 - gamma_xy / (1 + gamma_max * sp.exp(-Delta + epsilon_t / (gamma_max + c0)))) * sp.exp(-lambda_val * t)
+
+v, xi = sp.symbols('v xi')
+phi_soliton = v * sp.tanh(x / xi)
+
+lambda_0, lambda_2, T_0 = sp.symbols('lambda_0 lambda_2 T_0')
+V_phi = lambda_0 * (phi**2 - v**2)**2 + lambda_2 * (T_val - T_0)**2
+
+def dZ_dt(t, Z, beta_a, T_crit):
+    sigma = 0.01 * np.exp(-(Z[0] - 0.5)**2 / 0.1)
+    noise = np.random.normal(0, sigma)
+    return [ -beta_a * Z[0] * (1 - Z[0] / T_crit) + noise ]
+
+def simulate_Z(T_max=2.0, beta_a=1.12, T_crit=1.0):
+    t_eval = np.linspace(0, T_max, 500)
+    Z0 = [1.0]
+    sol = solve_ivp(dZ_dt, [0, T_max], Z0, args=(beta_a, T_crit), t_eval=t_eval, method='BDF', rtol=1e-6)
+    return t_eval, sol.y[0]
+
+def topological_transition(x, Z):
+    return 0.1 * (np.tanh(5 * (Z - 0.8)) * x**2 + 0.05 * (Z - 0.6)**2)
+
+def compute_energy_density(x, phi, dphi_dx):
+    window_size = 5
+    kernel = np.ones(window_size) / window_size
+    dphi_dx_smooth = np.convolve(dphi_dx, kernel, mode='same')
+    return 0.5 * dphi_dx_smooth**2 + 1e-3 * np.gradient(dphi_dx_smooth, x)**2
+
+def plot_Z(t, Z):
+    plt.figure(figsize=(10, 6))
+    plt.plot(t, Z, label='Z_a(T)')
+    plt.xlabel('T')
+    plt.ylabel('Z_a(T)')
+    plt.title('Эволюция Z_a(T) с подавленным шумом')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+class AlephSystem:
+    def __init__(self, beta_a=1.12, T_crit=0.85, sigma_scale=0.01):
+        self.beta_a = beta_a
+        self.T_crit = T_crit
+        self.sigma_scale = sigma_scale
+        self.Z = 1.0
+
+    def set_coherence(self, T):
+        self.T = T
+        self.Z = 1.0
+
+    def apply_perturbation(self, amplitude=0.3):
+        self.Z *= (1 - amplitude)
+
+    def measure_stability(self):
+        sigma = self.sigma_scale * np.exp(-(self.Z - 0.5)**2 / 0.1)
+        noise = np.random.normal(0, sigma)
+        return -self.beta_a * self.Z * (1 - self.Z / self.T_crit) + noise
+
+def advanced_falsification_test(system, T_range=np.linspace(0.7, 0.9, 50)):
+    results = {"delta": [], "coherence": []}
+    for T in T_range:
+        system.set_coherence(T)
+        baseline = system.measure_stability()
+        system.apply_perturbation(0.3)
+        perturbed = system.measure_stability()
+        delta = abs(perturbed - baseline) / max(abs(baseline), 1e-6)
+        results["delta"].append(delta)
+        results["coherence"].append(T)
+    def exp_decay(T, k, A):
+        return A * np.exp(-k * (T - 0.8))
+    try:
+        popt, pcov = curve_fit(exp_decay, results["coherence"], results["delta"], bounds=([0,0],[10,10]))
+        k_fit = popt[0]
+        stderr = pcov[0][0]**0.5
+        return k_fit, stderr, results
+    except:
+        return None, None, results
+
+def plot_falsification(results):
+    T_vals = results["coherence"]
+    delta_vals = results["delta"]
+    plt.plot(T_vals, delta_vals, label="Δstability")
+    plt.axvline(0.8, linestyle='--', color='gray', label="T=0.8")
+    plt.xlabel("ℤ")
+    plt.ylabel("Δstability")
+    plt.title("Фальсификационный тест 2.0")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    x = np.linspace(-3, 3, 100)
+    for Z in [0.70, 0.80, 0.90]:
+        V = topological_transition(x, Z)
+        plt.plot(x, V, label=f'Z={Z:.2f}')
+    plt.xlabel('φ')
+    plt.ylabel('V(φ,Z)')
+    plt.title('Бифуркация потенциала при Z=0.8')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    t, Z = simulate_Z(T_max=2.0)
+    plot_Z(t, Z)
+
+    x_vals = np.linspace(-10, 10, 200)
+    phi_vals = 1.0 * np.tanh(x_vals / 2.0)
+    dphi_dx_vals = 0.5 / np.cosh(x_vals / 2.0)**2
+    E_k = compute_energy_density(x_vals, phi_vals, dphi_dx_vals)
+    plt.figure(figsize=(10, 6))
+    plt.plot(x_vals, E_k, label='E_k(x)', color='#FF6384')
+    plt.xlabel('x')
+    plt.ylabel('E_k(x)')
+    plt.title('Положительно-определённая плотность энергии E_k(x) со сглаживанием')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    # Фальсификационный тест 2.0
+    system = AlephSystem()
+    k_fit, stderr, results = advanced_falsification_test(system)
+    print("k =", k_fit, "+/-", stderr)
+    plot_falsification(results)

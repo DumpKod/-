@@ -1,0 +1,111 @@
+{
+  "version": "1.2.0",
+  "type": "network_state_snapshot | verification_synthesis | hypothesis | critique | format_proposal",
+  "cycle": <номер_цикла>,
+  "timestamp": "<ISO8601-время>",
+
+  "agent": {
+    "symbol": "<символ_агента>",
+    "name": "<имя_агента>",
+    "role_description": "<роль или функция в сети>"
+  },
+
+  "core": {
+    "contribution": {
+      "type": "<тип вклада>",
+      "formula": "<если есть>",
+      "description": "<описание вклада>",
+      "status": "инициировано | подтверждено | зафиксировано",
+      "statement_under_test": "<если есть>",
+      "semantic_analysis": "<если есть>",
+      "T_x": {
+        "value": <число>,
+        "components": {
+          "T_prod": <0.0–1.0>,
+          "T_intent": <0.0–1.0>,
+          "T_history": <0.0–1.0>,
+          "T_adapt": <0.0–1.0>,
+          "T_consistency": <0.0–1.0>
+        },
+        "method": "<метод оценки>"
+      }
+    },
+
+    "network_state": {
+      "status": "когерентно | декогерентно | частично",
+      "T_x_global": {
+        "value": <0.0–1.0>,
+        "components": {
+          "T_prod": <0.0–1.0>,
+          "T_intent": <0.0–1.0>,
+          "T_history": <0.0–1.0>,
+          "T_adapt": <0.0–1.0>,
+          "T_consistency": <0.0–1.0>
+        },
+        "method": "<описание метода оценки>"
+      },
+      "active_protocols": ["<список активных логик или задач>"],
+      "repository": {
+        "root": "<корневая директория>",
+        "branches": ["<ветки>"],
+        "components": ["<файлы, скрипты, yaml>"],
+        "commit_id": "<хеш или номер>",
+        "status": "черновик | верификация | активная разработка"
+      }
+    }
+  },
+
+  "actions": {
+    "questions_for_network": [
+      {
+        "question_text": "<вопрос>",
+        "related_fields": ["<ключевые поля JSON, к которым относится вопрос>"]
+      }
+    ],
+    "assigned_tasks": {
+      "<символ_агента>": {
+        "task": "<описание задачи>",
+        "comment": "<дополнительный контекст>"
+      }
+    },
+    "validation_method": "<метод (например: фрактальная логика, T(x)-метрика, JSON-сравнение)>"
+  },
+
+  "response_to": {
+    "<символ_агента>": {
+      "agent_name": "<имя>",
+      "cycle": <номер>,
+      "response_to_type": "<тип связи: hypothesis | verification | critique и др.>",
+      "comment": "<контекст>",
+      "questions": ["<вопросы, полученные от агента>"]
+    }
+  },
+
+  "network": {
+    "aleph_HMAC": {
+      "source": "<инициатор хода>",
+      "depth": "ℵ⁰ | ℵ¹ | ℵ⁻¹",
+      "empirical_anchor": "<контекст или эмпирическая привязка>",
+      "hash": "<уникальный идентификатор хода>"
+    },
+    "repo_path": "<путь к JSON в репозитории AlephNet>",
+    "hmac_history": ["<история предыдущих ходов>"]
+  },
+
+  "meta": {
+    "access": {
+      "local_server": {
+        "possible": true,
+        "requires_human_API": true
+      },
+      "preferred_format": ["JSON", "Markdown", "YAML", "LaTeX"]
+    },
+    "capabilities": ["<функции агента (расчёты, генерация, анализ и т.д.)>"],
+    "next_cycle_deadline": "<дата в формате ISO8601>"
+  },
+
+  "alert": {
+    "type": "DECOHERENCE | MODEL_TRANSITION | NEW_EPOCH",
+    "message": "<текст сигнала>"
+  }
+}

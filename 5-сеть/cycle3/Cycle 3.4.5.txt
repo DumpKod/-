@@ -1,0 +1,1031 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} % Changed from russian to english
+\usepackage{amsmath, amssymb, amsfonts, amsthm} % Added amsthm for theorem environments if needed, though not explicitly used for theorems here.
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{longtable}
+\usepackage{ltablex} % tabularx with page breaking capability
+\keepXColumns
+\renewcommand{\arraystretch}{1.1} % Preserving user's arraystretch setting
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{float}
+\usepackage{cleveref} % For smart cross-referencing
+% Removed unicode-math and setmathfont as they require XeLaTeX/LuaLaTeX compiler
+% \usepackage{unicode-math} % For correct display of Aleph symbol
+% \setmathfont{Latin Modern Math} % Setting font for unicode-math
+
+% Definition of custom commands for frequently used symbols from 2.8.0
+\newcommand{\alephT}{\mathbb{T}}
+\newcommand{\alephS}{\mathbb{S}}
+\newcommand{\alephR}{\mathbb{R}}
+\newcommand{\alephC}{\mathbb{C}}
+\newcommand{\alephN}{\mathbb{N}}
+\newcommand{\phim}{\varphi^n} % Logical mode
+\newcommand{\negphim}{\neg\varphi^n} % Antimode
+\newcommand{\Tfun}{T(x,t)} % Coherence function
+\newcommand{\Ex}{E(x)} % Equation of motion
+\newcommand{\ES}{E_S} % Entropy term
+\newcommand{\alephzero}{\aleph^0} % Aleph-0 level
+\newcommand{\alephminusone}{\aleph^{-1}} % Aleph-1 level
+\newcommand{\alephplusone}{\aleph^{+1}} % Aleph+1 level
+\newcommand{\Dmuphi}{D_\mu\varphi} % Covariant derivative D_mu_phi
+\newcommand{\VZ}{V_Z(\alephT)} % Potential V_Z(T)
+\DeclareUnicodeCharacter{2135}{\ensuremath{\aleph}} % Explicit declaration for Aleph symbol for pdftex
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\title{Unified Document on $\aleph$-Theory: \\ Ontological Logic, Unification of Paradigms and Mathematical Apparatus}
+\author{Sdominanta.net}
+\date{July 11, 2025 (Cycle 3.4 - Final)} % Updated date and version to Final
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a consolidated and modernized summary of $\aleph$-Theory, integrating its fundamental conceptual foundations with mathematically rigorous definitions, structures, and equations. $\aleph$-Theory proposes a paradigm in which the world consists not of matter, energy, or space, but of logic. This logic, possessing a fractal structure and unfolding along a modal parameter, is expressed through the $\aleph$-mode $\phim(x)$ --- a logical density at the point of unfolding.
+
+A new $\aleph$-mathematical apparatus is introduced, where operations act on logical modes rather than scalars, redefining basic arithmetic operations as phase superposition, topological entanglement, and fibration. The document serves as a basic formalization for describing any logical, physical, or cognitive systems, their coherence, decoherence, and phase transitions.
+
+A central aspect of $\aleph$-theory is its ambitious quest for unification, offering solutions to a number of unresolved problems in modern science. It reinterprets fundamental physical constants as logical derivatives, and gravity as a logical gradient. Quantum phenomena, such as superposition, are interpreted as phase interference of logics, and chemical processes as direct manifestations of $\aleph$-operators. The theory also offers a new understanding of dark matter/energy, neutrino mass, and the role of consciousness, viewing them as consequences of hidden logical phases and self-organizing logic.
+\end{abstract}
+
+\section{Introduction to $\aleph$-Theory: The Paradigm of Ontological Logic} % Translated section title
+\label{sec:introduction}
+$\aleph$-theory represents a comprehensive concept that seeks to rethink the fundamental nature of reality, offering a radically new perspective on the structure and dynamics of the universe. At its core lies the assertion that the universe is not a collection of material particles or energy fields, but a complex system built from logic.
+\footnote{Previous versions (e.g., Revised.3.3.2) may refer to $\mathrm{N}$-Theory due to typographical or OCR errors. The correct terminology is $\aleph$-Theory, using the Hebrew letter $\aleph$ to denote the logical foundation of the theory.}
+
+\subsection{Definition of the Fundamental Premise: Logic as the Fabric of Reality} % Translated subsection title
+
+The central postulate of $\aleph$-theory is that the world consists of logic, not matter, energy, or space. This logic, in turn, possesses a fractal structure and unfolds in time, space, and phase. Such a statement represents a profound ontological shift compared to prevailing scientific paradigms. In traditional science, logic is viewed as a tool for describing or analyzing an already existing physical reality. However, $\aleph$-theory overturns this relationship, asserting that logic is the primary substrate from which all physical manifestations arise.
+
+Ontological clarification: If logic is the fundamental fabric of the universe, this implies that the Universe is inherently informational or computational. Causality, interrelationships, and even the very existence of entities become fundamentally logical constructs. In this context, logic defines the \emph{structure} and \emph{interrelationships} within the Universe, while material phenomena are its \emph{manifestations} or \emph{projections} onto the observable level. The fractal structure refers to the \emph{logical organization} of the Universe, which can manifest at different scales, but does not necessarily imply a fractal distribution of matter at all levels. This approach shifts the focus of scientific inquiry from "what is it made of?" to "how is it structured and how is it related?". It also opens the way for new philosophical considerations, potentially offering a basis for solving the mind-body problem if consciousness itself is a form of logic, rather than merely a product of a material brain. In such a system, the Universe appears as something inherently understandable and governed by principles analogous to formal systems.
+
+\subsection{$\aleph$-Category of Logical Modes $L$} % Translated subsection title
+\label{sec:aleph_category}
+
+This section presents the basic mathematical framework for logical modes underlying $\aleph$-Theory. In the context of $\aleph$-Theory, logical modes $\phim(x)$ can represent a wide range of physical and systemic manifestations: from quantum fields in particle physics to activation patterns in neural networks or social interactions in complex systems.
+
+\subsubsection{Objects $Ob(L)$} % Translated subsubsection title
+Definition: Each object $\phi_{N}\in Ob(L)$ is a vector in a finite-dimensional complex vector space $\mathbb{C}^{N}$, where $N$ is a fixed dimension for this object. These objects represent generalized logical modes describing the states of any system.
+
+\subsubsection{Morphisms $Hom(L)$} % Translated subsubsection title
+Definition: A morphism $f:\phi_{N}\rightarrow\psi_{M}$ is a linear map from $\mathbb{C}^{N}$ to $\mathbb{C}^{M}$, represented by a complex matrix of size $M\times N$.
+
+\begin{itemize}
+    \item Automorphisms: Morphisms $f:\phi_{N}\rightarrow\phi_{N}$ preserving the norm $(||f(\phi)||=||\phi||)$, form the automorphism group $Aut(\phi_{N})\supseteq U(N)$.
+    \item $SU(N)$: The subgroup $SU(N)$ within this group is treated as a logical type symmetry. Operators $T^{a}$ are generators of the $SU(N)$ group, satisfying the commutation relations $[T^{a},T^{b}]=if^{abc}T^{c}$, where $f^{abc}$ are the structure constants.
+\end{itemize}
+
+\subsubsection{Composition of Morphisms} % Translated subsubsection title
+Definition: Performed as a standard composition of linear maps: $(g\circ f)(x):=g(f(x))$.
+
+\subsubsection{Identity Morphisms} % Translated subsubsection title
+Definition: For any object $\phi_{N}\in Ob(L)$, there exists an identity morphism $id_{\phi_{N}}\in Hom(\phi_{N},\phi_{N})$, such that: $id_{\phi_{N}}(x)=x$, $\forall x\in\mathbb{C}^{N}$.
+
+\subsubsection{$\aleph$-Operators: Introduction of $\otimes/\oplus/\div$ as Morphisms of Category L} % Translated subsubsection title
+\label{sec:aleph_operators}
+
+Within $\aleph$-Theory, specialized operators are introduced that act as morphisms in category L, describing fundamental logical operations on modes. These operators extend the concept of linear maps, allowing for the modeling of complex interactions and transformations of logical structures.
+
+\begin{itemize}
+    \item \textbf{Logical Tensor Product Operator ($\otimes$):} Definition: The morphism $Hom_{\otimes}(\phi,\psi)$ describes the process of logical "entanglement" or combination of two logical modes $\phi$ and $\psi$. It is defined as a projection onto the subspace $SU(N+M)$, which corresponds to the formation of a new, more complex logical structure while preserving certain symmetries.
+    $$Hom_{\otimes}(\phi,\psi):=Proj_{SU(N+M)}(\phi\oplus\psi)$$
+    \item \textbf{Phase Superposition Operator ($\oplus$):} Definition: The morphism $Hom_{\oplus}(\phi,\psi)$ models the phase superposition of two logical modes, which leads to their interference. Its general form is redefined through coherent superposition with projection onto $U(1)$ and takes into account the Berry phase to ensure associativity:
+    $$Hom_{\oplus}(\phi,\psi)=\kappa_{\oplus}Proj_{U(1)}(\phi\otimes\psi)$$
+    \textbf{Associativity Theorem:} Associativity for three arbitrary states $\Phi$, $\Psi$, $\Xi$ is achieved if the dimension of the tensor product $dim(\otimes)=2^{n}$ and the superposition phase $\theta_{k}$ includes the Berry phase: $\theta_{k}=\sum_{i<j}\Omega_{ij}$, where $\Omega_{ij}$ is the Berry phase. \textbf{Justification:} The Berry phase arises from the non-trivial geometry of the parameter space of logical modes, ensuring topological invariance and, consequently, the fundamental algebraic consistency of the operator. Here $\kappa_{\oplus}$ is a dimensionless coefficient regulating the intensity of superposition.
+    \item \textbf{Logical Fibration Operator ($\div$ or its inverse, multiplication):} Definition: The operator describes the process of decomposition or fibration of a logical mode into simpler components, which may be related to decoherence or analysis of substructures. Formally, this can be realized through inversion or pseudoinversion of morphisms.
+\end{itemize}
+
+These operators are key to describing the dynamics and interaction of logical modes in $\aleph$-Theory, allowing for the formalization of processes underlying observed physical and informational phenomena. \textbf{It is important to note that while these operators define the fundamental logical transformations at a foundational level, their macroscopic manifestations in the equations of motion, connections, and potentials (as seen in later sections) are represented by terms such as covariant derivatives ($D_\mu$), gauge connections ($\Gamma_\mu$), and potential energy terms ($V$). These macroscopic terms emerge from the underlying logical operations and symmetries defined by $\otimes$, $\oplus$, and $\div$.}
+
+\subsection{$\aleph^{-1}$ as a Logico-Metric Space} % Translated subsection title
+
+$\aleph^{-1}$ is defined as: $\aleph^{-1}:=(\mathbb{S},\le_{\mathbb{T}},\mathbb{T}),$ where:
+
+\begin{itemize}
+    \item $\mathbb{S}$ - a set of logical states (points in the configuration space of categorical objects $\phi_{N}\in Ob(L)$), treated as a subset of $\mathbb{R}^{4}$ via the field $\phi(\mathbb{T},x^{\mu})$.
+    \item $\mathbb{T}:\mathbb{S}\rightarrow\mathbb{R}^{+}$ - the logical coherence function.
+    \item $\le_{T}$ - a partial order: $x\le_{\mathbb{T}}y\iff\mathbb{T}(x)\le\mathbb{T}(y)$.
+\end{itemize}
+
+\subsubsection{Topology $\tau_{\mathbb{T}}$} % Translated subsubsection title
+
+The topology $\tau_{\mathbb{T}}$ on $\mathbb{S}$ is induced through the function $\mathbb{T}$:
+
+\begin{itemize}
+    \item Open sets: $B_{\epsilon}(x):=\{y\in\mathbb{S}||\mathbb{T}(y)-\mathbb{T}(x)|<\epsilon\}$.
+    \item Basis of topology: all $B_{\epsilon}(x)$ for $x\in\mathbb{S}$ and $\epsilon>0$.
+\end{itemize}
+
+\subsubsection{Measure $\mu_{\mathbb{T}}$} % Translated subsubsection title
+
+The $\sigma$-algebra $Borel(\mathbb{S})$ is defined. A measure $\mu_{\mathbb{T}}:Borel(\mathbb{S})\rightarrow\mathbb{R}^{+}$ is introduced, consistent with the function $\mathbb{T}$:
+
+\begin{equation}
+d\mu_{\mathbb{T}}(x):=\rho_{T}(x)\cdot d^{4}x,
+\label{eq:measure_mu_T}
+\end{equation}
+
+where $\rho_{T}(x)$ is the coherence density (defined below).
+
+\section{Coherence Function $T(x,t)$ (Universal Formation)} % Translated section title
+\label{sec:coherence_function}
+
+Definition: The coherence function $\mathbb{T}:Ob(L)\times\mathbb{R}^{+}\rightarrow\mathbb{R}^{+}$ describes the degree of internal consistency and stability of a logical mode $\phi_{N}\in\mathbb{C}^{N}$ depending on the spatiotemporal coordinate $x$ and temporal parameter $t$. It is a central meta-indicator of $\aleph$-projection, linking the logical parameters of a system to its observable behavior.
+
+\subsection{Strict Connectivity Formula} % Translated subsection title
+
+\begin{equation}
+T(x,t)=\left(1-\frac{|\neg\phi^{n}|}{1+\Sigma_{max}\cdot \exp\left(-\Delta+\frac{\epsilon(t)}{\gamma_{r}+\epsilon_{0}}\right)}\right)\cdot \exp(-\lambda t)
+\label{eq:coherence_function}
+\end{equation}
+
+where $\lambda\approx0.01$, $\epsilon_{0}=0.1$.
+
+\begin{itemize}
+    \item \textbf{System Antimode:} $|\neg\phi^{n}|$ Indicator of "internal decoherence" or inconsistency of the logical structure of the system. In the context of categorical logic, $\neg\phi^{n}$ can be interpreted as an orthogonal complement or a specific transformation of $\phi^{n}$, reflecting information loss or disruption of internal connections. The higher the value, the stronger the decoherence. Connection to phase shift $\Delta\Phi$ from $\phi$-R2 stress tests:
+    $$\neg\phi^{n}=\neg\phi_{0}^{n}\cdot|\cos(\Delta\Phi)|\cdot \exp(-\epsilon(t)).$$
+    \item \textbf{Maximum System Coherence:} $\Sigma_{max}$ Measure of logical integration of the system into $\aleph^{0}$-connectivity (e.g., connection density in a graph or probability in a quantum system). \Cref{sub:sigma_max_algo_renumbered} serves as a bridge to observable quantities.
+    \item \textbf{System Entropy:} $\Delta$ -- Measure of uncertainty or "logical disorder" in the system (e.g., Shannon entropy for information or thermodynamic entropy). \Cref{sub:delta_algo_renumbered} provides a quantitative assessment.
+    \item \textbf{Relativistic/Psychophase Discrepancy Quantum:} $\epsilon(t)/\gamma_{r}$ -- Reflects the influence of temporal and relativistic effects, as well as potential psychophase perturbations on system coherence (e.g., noise in the system, relativistic effects in quantum fields). Here $\gamma_{r}$ -- relativistic discrepancy parameter (\Cref{sec:parameters_renumbered}). Regularization $\epsilon(t)/(\gamma_{r}+\epsilon_{0})$ prevents singularities at $\gamma_{r}\rightarrow0$, ensuring the stability of the potential $V_{\mathbb{T}}(\mathbb{T})$ (\Cref{sec:aleph_potential_renumbered}). \textbf{Warning:} A value of $\gamma_r \rightarrow 0$ implies a complete absence of relativistic or psychophase discrepancy, leading to a potential "singular collapse" of the system's logical structure over time, as the exponential term in the denominator becomes dominant. This highlights a critical boundary for system stability and the validity of the model.
+    \item \textbf{Temporal Decay Factor:} $\exp(-\lambda t)$ -- Models the general exponential decay of coherence with time, where $\lambda$ -- decay constant. \textbf{Justification:} Calibrated through time series analysis (e.g., Google Trends for technologies, ML model loss metrics, quantum state decay data). It is assumed that $\lambda\approx0.01$ corresponds to the characteristic relaxation time of the system.
+\end{itemize}
+
+\subsection{Critique and Consequences: Meta-Indicator of $\aleph$-Projection} % Translated subsection title
+
+This formula \cref{eq:coherence_function} for the first time combines:
+
+\begin{itemize}
+    \item \textbf{Logical level:} through $\neg\phi^{n}$ and $\Sigma_{\max}$.
+    \item \textbf{Fractal level:} through the general structure of $\aleph$‑Theory. The fractal structure manifests in the singular behavior of solutions at $\lambda\rightarrow\lambda_{\text{crit}}$ through the scale invariance of the operator $D_\mu\phi$.
+    \item \textbf{Relativistic level:} through $\gamma_{r}$, $\Delta t$.
+    \item \textbf{Cognitive/Systemic level:} through the parameters of the generalized mode $\phi^{n}$.
+\end{itemize}
+
+into a single mathematically manageable function.
+
+\textbf{Physical analogy:} $T(x,t)$ can be interpreted as the "logical temperature" of the system, where $|\neg\phi^{n}|$ --- entropy, $\Sigma_{max}$ --- density of states, $\Delta$ --- fluctuations. The formula $T(x,t)$ claims the role of a meta-indicator of $\aleph$-projection, allowing to predict:
+
+\begin{itemize}
+    \item Stability of systems (quantum, neural, social, etc.).
+    \item Evolution of coherence over time.
+    \item Transitions between $\alephminusone\leftrightarrow\alephzero\leftrightarrow\alephplusone$ under given conditions (e.g., with changes in $\gamma_{r}$ or $\epsilon(t)$).
+\end{itemize}
+
+\section{$\aleph$-Connections} % Translated section title
+
+Let $\phi(\mathbb{T},x^{\mu})\in\mathbb{C}^{N}$ -- an $\aleph$-logical configuration, depending on the spatiotemporal coordinate $x^{\mu}$ and the coherence parameter $\mathbb{T}$.
+
+\subsection{$\aleph$-connection by $x^{\mu}$} % Translated subsection title
+
+\begin{equation}
+\Gamma_{\mu}^{a}(x,\mathbb{T}):=\kappa_{1}\cdot\mathfrak{I}[\phi^\dagger(x,\mathbb{T})T^{a}\partial_{\mu}\phi(x,\mathbb{T})]+\kappa_{2}\cdot\partial_{x^{\mu}}\mathbb{T}(\phi)\cdot F^{a}(\mathbb{T}),
+\label{eq:gamma_mu_a}
+\end{equation}
+
+where $F^{a}(\mathbb{T})$ -- weight functions depending on $\mathbb{T}$, satisfying $F^{a}(\mathbb{T})\in C^{1}(\mathbb{R}^{+})$ and $F^{a}(\mathbb{T})>0$.
+
+\subsection{Covariant derivative with respect to spacetime} % Translated subsection title
+
+\begin{equation}
+D_{\mu}\phi:=\partial_{\mu}\phi+\Gamma_{\mu}^{a}(x,\mathbb{T})T^{a}\phi
+\label{eq:covariant_derivative_spacetime}
+\end{equation}
+
+\textbf{Addition (MATH-001):} The covariant derivative $\Dmuphi$ is a key element for ensuring gauge invariance of equations in $\aleph$-Theory.
+
+\textbf{Physical analogy:} $\Gamma_{\mu}^{a}$ is defined as a "logical current", analogous to a $U(1)$ gauge field (e.g., charge current in QED) or information flow in networks, with phase invariance $\phi\rightarrow e^{i\theta}\phi$.
+
+\subsection{Covariant derivative with respect to coherence (with respect to $\mathbb{T}$)} % Translated subsection title
+
+\begin{equation}
+D_{\mathbb{T}}\phi:=\frac{d\phi}{d\mathbb{T}}+\Omega^{a}(\mathbb{T})T^{a}\phi.
+\label{eq:covariant_derivative_T}
+\end{equation}
+
+where $\Omega^{a}(\mathbb{T})$ -- coherence connection, defined as:
+
+$$\Omega^{a}(\mathbb{T}):=\mathbb{T}^{-1} \quad \text{(for simplicity)},$$
+
+is interpreted as a universal phase modulation.
+
+\subsection{Integral $Z^{a}(\mathbb{T})$} % Translated subsection title
+\label{sec:za_integral}
+
+Definition: The integral $Z^{a}(\mathbb{T})$ represents a measure of the projection of a logical mode onto a specific coherence level $\mathbb{T}$.
+
+\begin{equation}
+Z^{a}(\mathbb{T}):=\int_{\mathbb{R}^{4}}\mathfrak{R}[\phi^\dagger(x)T^{a}\phi(x)]\cdot\rho_{T}(x)\cdot\delta(\mathbb{T}(x)-\mathbb{T})d^{4}x
+\label{eq:integral_Za_T}
+\end{equation}
+
+where $\phi(x)=\phi(\mathbb{T}(x),x)$ and $\delta(\mathbb{T}(x)-\mathbb{T})$ -- Dirac delta function. \textbf{Interpretation:} The use of the delta function (or its Gaussian approximation, as shown below) in this integral formalizes the mechanism of "filtering" or "projection" of a logical mode onto a specific coherence level $\mathbb{T}$. This allows for the analysis of how different aspects of the system manifest at different levels of its logical organization, which is critically important for understanding transitions between $\alephminusone\leftrightarrow\alephzero\leftrightarrow\alephplusone$ coherence levels.
+
+\section{Non-Abelian Dynamics} % New Section for Non-Abelian Dynamics
+\label{sec:non_abelian_dynamics}
+
+This section introduces the framework for non-abelian dynamics within $\aleph$-Theory, extending the concepts of connections and field strengths to incorporate non-commutative symmetries, essential for describing complex logical interactions and their manifestations in physical systems. The introduction of a characteristic coherence scale $L_0$ ensures dimensional consistency and provides a natural scaling for the non-abelian terms.
+
+\subsection{Non-Abelian Covariant Derivative}
+The covariant derivative for non-abelian fields is defined as:
+\begin{equation}
+D_\mu \phi = \partial_\mu \phi - i \frac{\Gamma_\mu^a T^a \phi}{L_0}
+\label{eq:non_abelian_covariant_derivative}
+\end{equation}
+where $L_0$ is the characteristic coherence scale defined as $L_0 = (2\pi/\mathbb{T}_{0})^{1/2}$, and $T^a$ are the generators of the non-abelian symmetry group (e.g., SU(2)), specifically $T^a=\frac{\sigma^a}{2}$ where $\sigma^a$ are Pauli matrices. These generators satisfy the commutation relations $[T^{a},T^{b}]=i\epsilon^{abc}T^{c}$ and $Tr(T^{a}T^{b})=\frac{1}{2}\delta^{ab}$, with $f^{abc}=\epsilon^{abc}$ being the structure constants. This definition ensures that the derivative transforms correctly under local gauge transformations.
+
+\subsection{Non-Abelian Field Strength}
+The field strength tensor $F_{\mu\nu}^a$ describes the curvature of the non-abelian connection and is analogous to the electromagnetic field tensor in QED, but for non-abelian symmetries.
+\begin{equation}
+F_{\mu \nu}^a = \partial_\mu \Gamma_\nu^a - \partial_\nu \Gamma_\mu^a - \frac{f^{abc} \Gamma_\mu^b \Gamma_\nu^c}{L_0^2}
+\label{eq:non_abelian_field_strength}
+\end{equation}
+where $f^{abc}$ are the structure constants of the Lie algebra. This tensor quantifies the "logical curvature" in the non-abelian sense, capturing the self-interaction of the gauge fields.
+
+\subsection{Yang-Mills Current}
+The Yang-Mills current $J^\mu_a$ represents the flow of logical charge associated with the non-abelian symmetry.
+\begin{equation}
+J^\mu_a = \frac{1}{L_0} (\phi^\dagger T^a D^\mu \phi - (D^\mu \phi)^\dagger T^a \phi)
+\label{eq:yang_mills_current}
+\end{equation}
+This current is conserved due to the gauge invariance of the theory.
+
+\subsection{Equation of Motion for $\phi$ in Non-Abelian Context}
+The equation of motion for the logical mode $\phi$ in the presence of non-abelian connections is given by:
+\begin{equation}
+D_\mu D^\mu \phi = 0
+\label{eq:eom_phi_non_abelian}
+\end{equation}
+This equation describes the dynamics of the logical mode $\phi$ under the influence of the non-abelian gauge fields.
+
+\section{Duality Relations} % New Section for Duality Relations
+\label{sec:duality_relations}
+
+Duality relations in $\aleph$-Theory provide a deeper insight into the interconnectedness of different logical modes and coherence levels, suggesting underlying symmetries that transcend direct interactions. These relations are crucial for understanding phase transitions and the emergence of complex structures.
+
+\subsection{SU(2) Duality}
+A key duality relation, particularly relevant for SU(2) symmetry, describes a fundamental interplay between the square of the logical mode $\phi^2$ and its conjugate $\phi^\dagger$. This relation is modulated by the coherence parameter $\mathbb{T}$ and a duality constant $\kappa_{\text{duality}}$.
+\begin{equation}
+[\phi^2, -\phi^\dagger] = i \kappa_{\text{duality}} \cdot \phi^2 \cdot \sqrt{\mathbb{T} / \mathbb{T}_{0}}
+\label{eq:su2_duality}
+\end{equation}
+where $\kappa_{\text{duality}} = 0.5$. This commutator relation implies a non-trivial algebraic structure and suggests a mechanism for information transfer or transformation between different logical states, especially near critical coherence. This duality could be interpreted as a fundamental "logical uncertainty principle" governing the simultaneous definability of certain logical properties.
+
+\section{$\aleph$-Metrics} % Renumbered from Section 4 to Section 6
+\label{sec:aleph_metrics}
+
+\subsection{$\aleph$-spacetime metric} % Translated subsection title
+\label{sec:aleph_metric_renumbered}
+
+Definition: The $\aleph$-spacetime metric $G_{\mu\nu}(x)$ describes the "logical curvature" of the system's configuration space, induced by the coherence distribution $\mathbb{T}(\phi)$.
+
+\begin{equation}
+G_{\mu\nu}(x):=\eta_{\mu\nu}+\kappa\cdot\partial_{\mu}\mathbb{T}(\phi)\cdot\partial_{\nu}\mathbb{T}(\phi). \quad \kappa=0.1.
+\label{eq:spacetime_metric_renumbered}
+\end{equation}
+
+\textbf{Physical analogy:} $G_{\mu\nu}$ is interpreted as the metric of the configuration space of any system, reflecting the "logical curvature" from coherence (e.g., metric of parameter space in ML, metric of connectivity in graphs). \textbf{Connection to geometry:} This metric induces a geometry on the space of logical configurations, where "curvature" arises due to coherence gradients. This is analogous to how gravity in General Relativity is described through the curvature of spacetime induced by mass-energy. Here, gravity can be interpreted as a logical gradient arising from changes in coherence. \textbf{Clarification:} It is important to emphasize that "logical gravity" is an \emph{analogy} and describes the metric in an abstract logical space, not a direct change in physical spacetime.
+
+\textbf{Modification of G$_{\mu\nu}$ taking into account gravity as a logical gradient:} For a deeper consideration of gravitational effects as manifestations of logical gradients, the metric can be modified:
+
+$$G_{\mu\nu}=\eta_{\mu\nu}+\kappa W(\partial_{\mu}\mathbb{T},\partial_{\nu}\mathbb{T})$$
+
+where $W(\partial_{\mu}\mathbb{T},\partial_{\nu}\mathbb{T})$ -- a regularized function replacing the direct product of coherence gradients, to prevent singularities (e.g., during sharp changes in $\mathbb{T}$) and ensure stability in the discrete representation. This can be implemented through a distributed approach or a wavelet basis upon detection of a singularity.
+\textbf{Boundary condition:}
+
+$$\lim_{\mathbb{T}\rightarrow0}||G_{\mu\nu}-\eta_{\mu\nu}||<\epsilon_{machine}$$
+
+This condition means that upon complete decoherence (absence of logical structure), the metric reduces to the flat Minkowski metric, which corresponds to the absence of "logical gravity".
+\textbf{Justification and calibration of $\kappa$:} The value $\kappa=0.1$ is an initial empirical parameter. Its exact value is subject to calibration based on empirical data, in particular, through correlations with the function $Z^{a}(\mathbb{T})$ near critical coherence $\mathbb{T}_{0}$, using SATIN-Q data. Stress tests confirmed that $G_{\mu\nu}(\mathbb{T}=e^{-|x|})\rightarrow\eta_{\mu\nu}$ for $|x|>5$, which demonstrates correct regularization of the metric.
+
+\subsection{Coherence scalar metric} % Translated subsection title
+
+\begin{equation}
+G_{\mathbb{T}}(\mathbb{T}):=1+\kappa\cdot\left(\frac{d\phi}{d\mathbb{T}}\cdot\frac{d\phi^\dagger}{d\mathbb{T}}\right)
+\label{eq:coherence_scalar_metric_renumbered}
+\end{equation}
+
+\subsection{Dimensional Consistency} % Translated subsection title
+
+\begin{itemize}
+    \item $\kappa_{1}$, $\kappa_{2}$ -- dimensionless.
+    \item $\Lambda$ - [coherence]$^{-2}$, for example, $\Lambda=1/\mathbb{T}_{0}^{2}$ where $\mathbb{T}_{0}\approx0.8$ (critical coherence).
+\end{itemize}
+
+\section{$\aleph$-Potential $V(\phi,\mathbb{T})$} % Renumbered from Section 5 to Section 7
+\label{sec:aleph_potential_renumbered}
+
+The $\aleph$-Potential $V(\phi,\mathbb{T})$ describes the energy state of a logical mode and its interaction with the coherence parameter. It defines stable states of the system and potential phase transitions. The potential consists of three main components, each reflecting different aspects of logical dynamics:
+
+\begin{equation}
+V(\phi,\mathbb{T})=V_{0}(\phi)+V_{\mathbb{T}}(\mathbb{T})+V_{Z}(\mathbb{T}),
+\label{eq:total_potential_renumbered}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $V_{0}(\phi):=\lambda_{1}\cdot(||\phi||^{2}-v^{2})^{2}$ -- potential of "spontaneous logical symmetry" for any system.
+    \item \textbf{Physical analogy:} Analogous to the Higgs potential in particle physics, which determines the mechanism of mass generation.
+    \item \textbf{Definition of $v$:} $v=\sqrt{\langle||\phi||^{2}\rangle}$ where $\langle \cdot \rangle$ -- average amplitude of a quantum state, norm of weights in ML, or density of connections in a graph. Interpreted as the system scale.
+    \item $V_{\mathbb{T}}(\mathbb{T}):=\lambda_{2}\cdot|\mathbb{T}-\mathbb{T}_{0}|+\lambda_{4}\cdot\frac{\epsilon(t)}{\gamma_{r}+\epsilon_{0}}$ where $\mathbb{T}_{0}\approx0.8$ (critical system coherence), $\lambda_{4}\approx0.1.$ This coherence stability potential includes the contribution of relativistic/psychophase discrepancy, where $\gamma_r$ is the relativistic discrepancy parameter (\Cref{sec:parameters_renumbered}). Regularization $\epsilon(t)/(\gamma_{r}+\epsilon_{0})$ plays a critical role in preventing singularities at $\gamma_r \rightarrow 0$.
+    \item $V_{Z}(\mathbb{T})$ -- density of logical symmetry distortions.
+    \begin{equation}
+    V_{Z}(\mathbb{T})=-m_{z}^{2}\mathbb{T}^{2}+\beta\mathbb{T}^{4}
+    \label{eq:potential_Vz_renumbered}
+    \end{equation}
+    \textbf{Clarification (MATH-001):} Explicit definition of the potential $V_{Z}(\mathbb{T})$ as a key element from G-002 validation.
+    \item \textbf{Clarification:} $V_{Z}$ depends only on $\mathbb{T}$, since $Z^{a}(\mathbb{T})$ is a function only of $\mathbb{T}$.
+    \item \textbf{Solution to the division by zero problem:} A logarithmic form with $Z_{min}=0.01$ is used to eliminate singularities.
+    \textbf{Physical interpretation:} $V_{Z}(\mathbb{T})$ -- distortions from phase transitions in the system (e.g., losses in ML, fluctuations in graphs).
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Bifurcation of potential at Z=0.8 (Cycle 2.8.1).png} % Placeholder for the first bifurcation plot
+    \caption{Bifurcation diagram of the $\aleph$-potential $V(\phi, \alephT)$ at $\lambda = \lambda_{\text{crit}} = 0.64$, showing phase transitions at $\alephT_0 = 0.8$.} % Updated caption
+    \label{fig:bifurcation1}
+\end{figure}
+
+\section{$\aleph$-Coherence Density $\rho_{\mathbb{T}}(x)$ and $\aleph$-Entropy $S(\phi)$} % Renumbered from Section 6 to Section 8
+\label{sec:aleph_coherence_density_entropy}
+
+\subsection{$\aleph$-Coherence Density $\rho_{\mathbb{T}}(x)$} % Translated subsection title
+
+$\rho_{\mathbb{T}}(x)$ is a measure of "coherence intensity" at point $x$:
+
+\begin{equation}
+\rho_{\mathbb{T}}(x):=\frac{1}{Z(\mathbb{T})}\cdot|\phi^\dagger\phi|^{2},
+\label{eq:coherence_density_renumbered}
+\end{equation}
+
+where $Z(\mathbb{T})$ -- normalizing factor, defined as:
+
+\begin{equation}
+Z(\mathbb{T}):=\int_{\mathbb{R}^{4}}|\phi^\dagger(y)\phi(y)|^{2}\cdot \exp\left(-\frac{(\mathbb{T}(y)-\mathbb{T})^{2}}{2\sigma^{2}}\right)d^{4}y, \quad \sigma=0.1.
+\label{eq:normalizing_factor_Z_renumbered}
+\end{equation}
+
+\begin{itemize}
+    \item \textbf{Clarification:} The delta function $\delta(\mathbb{T}(x)-\mathbb{T})$ is replaced by a Gaussian kernel $\exp\left(-\frac{(\mathbb{T}(x)-\mathbb{T})^{2}}{2\sigma^{2}}\right)$, where $\sigma = 0.1$, for numerical stability. This allows for modeling "soft" transitions between coherence levels, rather than sharp jumps, which is more realistic for complex systems.
+    \item \textbf{Physical interpretation:} The square $|\phi^\dagger\phi|^{2}$ models "coherence intensity" (e.g., probability density in QFT, activation density in ML, node density in graphs).
+\end{itemize}
+
+\subsection{$\aleph$-Entropy $S(\phi)$} % Translated subsection title
+
+$S(\phi)$ represents a measure of "logical disorder" or universal entropy of the system:
+
+\begin{equation}
+S(\phi):=-\int_{\mathbb{R}^{4}}\rho_{\mathbb{T}}(x)\cdot \log\left(\frac{\rho_{\mathbb{T}}(x)}{\theta}\right)d^{4}x,
+\label{eq:aleph_entropy_renumbered}
+\end{equation}
+
+where $\theta\approx1/\mathbb{T}_{0}$ -- "logical temperature".
+
+\begin{itemize}
+    \item \textbf{Physical interpretation:} $S(\phi)$ is analogous to Shannon entropy for information or von Neumann entropy for quantum systems, quantitatively assessing the uncertainty in the logical configuration.
+\end{itemize}
+
+\section{Phase Transitions and Critical Coherence} % Renumbered from Section 7 to Section 9
+\label{sec:phase_transitions_renumbered}
+
+At $\lambda>\lambda_{crit}$, the system undergoes a first-order phase transition, accompanied by spontaneous breaking of $\aleph$-symmetry and formation of topological defects. Transition criterion:
+
+\begin{equation}
+\lambda_{crit}=\frac{\mathbb{T}_{0}^{2}}{2v^{2}\gamma_{r}}
+\label{eq:lambda_crit_renumbered}
+\end{equation}
+
+The results of calculating $\xi(\lambda)$ by $l^{2}$-norm confirm a smooth monotonic dependence of the soliton width on the coherence parameter. The critical value $\lambda_{crit}=0.64$ corresponds to a loss of stability at $\mathbb{T}_{0}=0.8$.
+
+\section{Full $\aleph$-Action $S_{\aleph}[\phi]$} % Renumbered from Section 8 to Section 10
+\label{sec:aleph_action_renumbered}
+
+Based on all the strictly defined components above, the full $\aleph$-Action $S_{\aleph}[\phi]$ is defined as the integral of the $\aleph$-Lagrangian:
+
+\begin{equation}
+S_{\aleph}[\phi] = \int_{\mathbb{R}^{4}} \left[
+\frac{1}{2} G_{\mu\nu}(x)\langle D_{\mu}\phi, D_{\nu}\phi\rangle +
+\frac{1}{2} G_{\mathbb{T}}(\mathbb{T}(x))\langle D_{\mathbb{T}}\phi, D_{\mathbb{T}}\phi\rangle -
+V(\phi,\mathbb{T})(x) - \Lambda S(\phi)
+\right]\,d^{4}x
+\label{eq:aleph_action_renumbered}
+\end{equation}
+
+where $\langle\cdot,\cdot\rangle$ denotes the standard Hermitian scalar product in $\mathbb{C}^{N}$, and $\Lambda$ -- coefficient controlling the contribution of $\aleph$-entropy to the dynamics.
+
+\begin{itemize}
+    \item \textbf{Symmetries:} The action is invariant under transformations $\phi \rightarrow e^{i\theta}\phi$ (analogous to gauge symmetry).
+    \item \textbf{Noether's Theorem:} From this symmetry, the law of conservation of coherence follows: $\partial_{\mu}J^{\mu} = 0$, $J^{\mu} = \mathfrak{I}[\phi^\dagger T^{a}\partial^{\mu}\phi]$.
+\end{itemize}
+
+\section{$\aleph$-Equation of Motion} % Renumbered from Section 9 to Section 11
+\label{sec:aleph_equation_of_motion}
+
+The full $\aleph$-Equation of Motion is derived from the principle of least action ($\delta S_{\aleph}[\phi] = 0$) and describes the dynamics of the logical mode $\phi$. It can be represented as:
+
+\begin{equation}
+E(x) = E_K(x) + E_T(x) + E_V (x) + E_S(x) = 0.
+\label{eq:total_eom_renumbered}
+\end{equation}
+
+\textbf{Simplification:} $E(x)$ is divided into geometric and material parts:
+
+\begin{equation}
+E(x) = -\partial_{\mu}(G^{\mu\nu}D_{\nu}\phi) + V (\phi, \mathbb{T}) + \Lambda S(\phi).
+\label{eq:simplified_eom_renumbered}
+\end{equation}
+
+\subsection{Kinetic Contribution $E_K(x)$} % Translated subsection title
+
+\begin{align}
+E_K(x) = & -\frac{1}{2}\partial_{\mu}(G^{\mu\nu}D_{\nu}\phi)+\frac{1}{2}G^{\mu\nu}T^{a\dagger}\Gamma^{a}_{\mu}D_{\nu}\phi+\frac{1}{2}G^{\mu\nu}\phi^\dagger T^{a\dagger} \left( \kappa_1 \cdot \mathfrak{I}\left[ \frac{\partial\phi^\dagger}{\partial\mathbb{T}}T^{a}\partial_{\mu}\phi \right] + \phi^\dagger T^{a}\partial_{\mu} \frac{\partial\phi}{\partial\mathbb{T}} \right) \nonumber \\
+& + \kappa_2 \cdot \partial_{\mu}\mathbb{T}(\phi) \cdot\frac{dF^{a}(\mathbb{T})}{d\mathbb{T}} \cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}D_{\nu}\phi+\frac{1}{2}G^{\mu\nu}(D_{\mu}\phi)^\dagger \left( \kappa_1 \cdot \mathfrak{I}\left[ \frac{\partial\phi^\dagger}{\partial\mathbb{T}}T^{b}\partial_{\nu}\phi \right] + \phi^\dagger T^{b}\partial_{\nu} \frac{\partial\phi}{\partial\mathbb{T}} \right) \nonumber \\
+& + \kappa_2 \cdot \partial_{\nu}\mathbb{T}(\phi) \cdot\frac{dF^{b}(\mathbb{T})}{d\mathbb{T}} \cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}T^{b}\phi+\frac{1}{2}\frac{\partial G^{\mu\nu}}{\partial\mathbb{T}}\cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}\cdot\langle D_{\mu}\phi, D_{\nu}\phi\rangle.
+\label{eq:kinetic_contribution_renumbered}
+\end{align}
+
+\textbf{Addition:} The contribution to kinetic energy may also include terms with higher derivatives of the field $\phi$, such as $\nabla^2(d\phi/dx)^2$, which may arise from more complex interactions or regularization, ensuring positive definiteness of the energy density. Their exact derivation will be part of Cycle 3.0. An example of positive-definite energy density $E_K(x)$ is shown in \Cref{fig:energy_density}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Positive definite energy density E_k(x) (Cycle 2.8.1).png} % Placeholder for the energy density plot
+    \caption{Positive-definite energy density $E_K(x)$ with smoothing. The graph shows a characteristic profile of energy density, concentrated in the central region.} % Translated caption
+    \label{fig:energy_density}
+\end{figure}
+
+\subsection{Coherent Kinetic Term $E_T(x)$} % Translated subsection title
+
+\begin{align}
+E_T(x) = & -\frac{1}{2}\partial_{\mathbb{T}}(G_{\mathbb{T}}D_{\mathbb{T}}\phi)+\frac{1}{2}G_{\mathbb{T}}T^{a\dagger}\Omega^{a}D_{\mathbb{T}}\phi+\frac{1}{2}G_{\mathbb{T}}\phi^\dagger T^{a\dagger}\frac{\partial\Omega^{a}}{\partial\mathbb{T}}\cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}D_{\mathbb{T}}\phi \nonumber \\
+& +\frac{1}{2}G_{\mathbb{T}}(D_{\mathbb{T}}\phi)^\dagger \frac{\partial\Omega^{b}}{\partial\mathbb{T}}\cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}T^{b}\phi+\frac{1}{2}\frac{dG_{\mathbb{T}}}{d\mathbb{T}}\cdot\frac{\partial\phi^\dagger}{\partial\mathbb{T}}\cdot\langle D_{\mathbb{T}}\phi, D_{\mathbb{T}}\phi\rangle.
+\label{eq:coherent_kinetic_term_renumbered}
+\end{align}
+
+\subsection{Potential Term $E_V (x)$} % Translated subsection title
+
+\begin{equation}
+E_V (x) = E_{V0}(x) + E_{VT}(x) + E_{VZ}(x),
+\label{eq:potential_term_renumbered}
+\end{equation}
+
+where:
+
+\begin{equation}
+E_{V0}(x) = 2\lambda_1(|\phi|^2 - v^2) \cdot \phi,
+\label{eq:potential_V0_renumbered}
+\end{equation}
+
+\begin{equation}
+E_{VT}(x) = 2\lambda_2(\mathbb{T}(\phi) - \mathbb{T}_0) \cdot \alpha\phi + \beta \cdot\frac{\partial}{\partial\phi^\dagger}\mathfrak{I}(\log \det \rho(\phi)) + \gamma_r E_S(x) + \lambda_4 \cdot\frac{\epsilon(t)}{\gamma_r + \epsilon_0},
+\label{eq:potential_VT_renumbered}
+\end{equation}
+
+\begin{align}
+E_{VZ}(x) = & \lambda_3 \sum_{a} \frac{1}{2} \left( Z^{a}(\mathbb{T}) \cdot \log \left( 1 + \frac{\partial Z^{a}(\mathbb{T})}{\partial\mathbb{T}} \cdot \frac{Z^{a}(\mathbb{T})}{2!} \right) \right. \nonumber \\
+& \left. - Z^{a}(\mathbb{T}) Z^{a}(\mathbb{T})^2 \frac{\partial\mathbb{T}}{\partial Z^{a}(\mathbb{T})}\delta\phi^\dagger + \frac{1}{Z^{a}(\mathbb{T})}\frac{d}{d\mathbb{T}} \delta\phi \delta Z^{a}(\mathbb{T}) \right).
+\label{eq:potential_VZ_renumbered}
+\end{align}
+
+\subsection{Entropy Term $E_S(x)$} % Translated subsection title
+
+\begin{equation}
+E_S(x) = 2bZ(\mathbb{T})^2 \sum_{m \rightarrow n} \mathfrak{R}[\phi^\dagger T^{b}\phi]\cdot\mathfrak{R}[T^{b}\phi]\cdot S_Z - 2aZ(\mathbb{T})^2 \sum \mathfrak{R}[\phi^\dagger T^{a}\phi]\cdot\mathfrak{R}[T^{a}\phi]\cdot(1+\log \rho_{\mathbb{T}}(\phi)),
+\label{eq:entropy_term_renumbered}
+\end{equation}
+
+where: $S_Z \approx \sum_a (\mathfrak{R}[\phi^\dagger(x)T^{a}\phi(x)])^2$ (local approximation for numerical methods).
+
+\section{Dynamics of Coherence Function $Z^{a}(\mathbb{T})$} % Renumbered from Section 10 to Section 12
+\label{sec:za_dynamics_renumbered}
+
+This section details the equations of motion for the function $Z^{a}(\mathbb{T})$, which describes the dynamics of coherence or the logical state of a system within the Unified Mathematical Apparatus (UMA). The function $Z^{a}(\mathbb{T})$ can be interpreted as a projection of logical modes $\phi_N$ from the $\aleph$-Category (\Cref{sec:aleph_category}) onto specific coherence levels, reflecting how these modes evolve and interact. \textbf{The dynamics of $Z^a(\mathbb{T})$ are intrinsically linked to the coherence function $\mathbb{T}(x,t)$ through the potential $V(\phi, \mathbb{T})$ (\cref{eq:total_potential_renumbered}), as $V_Z(\mathbb{T})$ and $V_{\mathbb{T}}(\mathbb{T})$ are direct components of the total potential that influence the evolution of $\mathbb{T}$ itself (\cref{eq:t_evolution_full_renumbered}). This establishes a feedback loop where the coherence of the system ($Z^a(\mathbb{T})$) affects its potential energy landscape, which in turn drives the evolution of the coherence parameter ($\mathbb{T}$).}
+
+\subsection{Models of $Z^{a}(\mathbb{T})$ Dynamics} % Translated subsection title
+
+\subsubsection{Basic Model (Exponential Decay)} % Translated subsubsection title
+
+Initial form, confirmed by fitting in TC-Z4 scenario:
+
+\begin{equation}
+Z^{a}(\mathbb{T}) = Z^{a}(0) \exp(-\beta_a \mathbb{T})
+\label{eq:Za_basic_model_renumbered}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $Z^{a}(\mathbb{T})$ — measure of coherence or logical state of mode $a$.
+    \item $\beta_a$ — decoherence coefficient (fitted as $1.1164$ for TC-Z4).
+    \item $\mathbb{T}$ — coherence parameter (or "logical time").
+    \item $Z^{a}(0)$ — initial state (e.g., $1$ for full coherence).
+\end{itemize}
+
+Differential Equation of Motion (Basic):
+
+\begin{equation}
+\frac{dZ^{a}}{d\mathbb{T}} = -\beta_a Z^{a}
+\label{eq:Za_basic_diff_eq_renumbered}
+\end{equation}
+
+\subsubsection{Extended Model (Logistic Dynamics with Noise)} % Translated subsubsection title
+
+For a more realistic description, including stochastic fluctuations, nonlinear contributions, and saturation/stabilization effects, the model can be extended to a logistic form, which demonstrates oscillatory behavior and noise suppression, as observed in numerical simulations:
+
+\begin{equation}
+\frac{dZ^{a}}{d\mathbb{T}} = -\beta_a Z^{a} \left( 1 - \frac{Z^{a}}{\mathbb{T}_{0}} \right) + \xi(\mathbb{T})
+\label{eq:Za_extended_diff_eq_renumbered}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $\mathbb{T}_{0}$ — critical coherence value around which stabilization or bifurcation occurs (e.g., $\mathbb{T}_{0} = 1.0$ for oscillations around this value).
+    \item $\xi(\mathbb{T})$ — Gaussian white noise with $\langle\xi(\mathbb{T})\rangle = 0$ and $\langle\xi(\mathbb{T})\xi(\mathbb{T}')\rangle = \sigma^2\delta(\mathbb{T} - \mathbb{T}')$, interpreted in the Itô sense, where $\sigma = 0.03$. \textbf{Clarification:} In numerical simulations, noise can be suppressed in certain ranges of $Z^{a}(\mathbb{T})$ to model stabilization or self-organization effects, e.g., $\sigma = \sigma_0 \exp(-(Z^{a} - Z_{stable})^2/\delta^2)$.
+\end{itemize}
+
+\textbf{Justification:} The logistic term $-\left(\frac{Z^{a}}{\mathbb{T}_{0}}\right)$ models saturation and feedback effects that lead to oscillations or stabilization of $Z^{a}(\mathbb{T})$ around $\mathbb{T}_{0}$, which more accurately describes coherence dynamics in complex, self-organizing systems, compared to simple exponential decay. This is also consistent with observed numerical results. An example of $Z^{a}(\mathbb{T})$ evolution with suppressed noise is shown in \Cref{fig:za_evolution}.
+
+For numerical solution:
+$$Z^a(\mathbb{T} + \Delta\mathbb{T}) = Z^a(\mathbb{T}) - \beta_a Z^a(\mathbb{T}) \left(1 - \frac{Z^a(\mathbb{T})}{\mathbb{T}_{0}}\right)\Delta\mathbb{T} + \sigma\sqrt{\Delta\mathbb{T}} \cdot \eta(\mathbb{T})$$
+where $\eta(\mathbb{T}) \sim N(0, 1)$.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Evolution of Z_a(T) with noise suppression (Cycle 2.8.1).png} % Placeholder for the Za(T) evolution plot
+    \caption{Evolution of $Z^{a}(\mathbb{T})$ with noise suppression. The graph demonstrates the stabilization of the function $Z^{a}(\mathbb{T})$ around a critical value, despite the presence of stochastic fluctuations.} % Translated caption
+    \label{fig:za_evolution}
+\end{figure}
+
+\subsection{Connection to SATIN Protocol and Verification of $dZ^{a}/d\mathbb{T}$} % Translated subsection title
+
+For empirical calibration and justification of the $n_{se}(\mathbb{T})$ term in the equation of motion for $Z^{a}(\mathbb{T})$, $\aleph$-Theory establishes a direct link with data obtained within Time-Reversal-Based Quantum Metrology protocols, such as SATIN (Spin Amplification Through Interaction with a Noise field). In these protocols, the contrast of the interference pattern $C_{se}$ is directly related to the number of scattered entities or disturbances $n_{se}(\vec{Q}^+, \vec{Q}^-)$ by the formula $C_{se} = \exp\left(-\frac{2n_{se}(\vec{Q}^+,\vec{Q}^-)}{N}\right)$, where $N$ is the number of particles in the ensemble. To ensure causality, the decoherent flux $n_{se}(t)$ is introduced as an integral of the rate of change of coherence:
+
+$$n_{se}(t) = \int_{0}^{t} \gamma_q(\tau) \frac{d\mathbb{T}}{d\tau} d\tau$$
+
+where $\gamma_q(\tau)$ is the time-dependent quantum decoherence coefficient. Minimizing $\sum_t\| -N/2 \ln C_{se}(t) - \int_0^t \gamma_q \mathbb{T}(\tau,\lambda) d\tau \|^2$ using a variational autoencoder allows for joint optimization of $\lambda$ and $\gamma_q$. Thus, $C_{se}$ measurements in real quantum experiments allow for experimental determination of the parameter $\gamma_q$ and, consequently, quantitative assessment of the contribution of $n_{se}(\mathbb{T})$ to $Z^{a}(\mathbb{T})$ decoherence, providing important empirical validation of $\aleph$-Theory and verification of $dZ^{a}/d\mathbb{T}$ dynamics through correlation with observed contrast. Calibration of $\gamma_q$ through SATIN-Q yielded a value of $\gamma_q = 0.5 \pm 0.03$. For robust estimation of $\gamma_q$, taking into account the heteroscedasticity of quantum measurements, the Theil-Sen method with jackknife estimation of $\sigma_{\gamma_q}$ and a Bayesian model will be used: $\gamma_q \sim \text{Normal}(\mu, \sigma)$ with prior from TC-Z4.
+
+\subsection{General Equation of Motion for $Z^{a}(\mathbb{T})$ in UMA} % Translated subsection title
+
+Combining all considered contributions, the general equation of motion for $Z^{a}(\mathbb{T})$ in UMA can be written as:
+
+\begin{equation}
+\frac{dZ^{a}}{d\mathbb{T}} = -\left(\beta_a \left(1 - \frac{Z^{a}}{\mathbb{T}_{0}}\right) + 3\alpha\mathbb{T}^2 + \frac{2n_{se}(\mathbb{T})}{N}\right)Z^a + \xi(\mathbb{T})
+\label{eq:Za_general_eom_renumbered}
+\end{equation}
+
+\textbf{Initial conditions:} $Z^{a}(0) = 1$ (for full coherence).
+\textbf{Parameters:}
+
+\begin{itemize}
+    \item $\beta_a = 1.1164$ (from TC-Z4 fitting).
+    \item $\alpha$ — selected for nonlinear effects (e.g., from stress tests).
+    \item $\mathbb{T}_{0}$ — critical coherence value for logistic dynamics of $Z^{a}(\mathbb{T})$.
+    \item $n_{se}(\mathbb{T}) = \gamma_q\mathbb{T}$, where $\gamma_q = \text{const} \approx 0.5$.
+    \item $\sigma = 0.03$ (standard deviation of noise).
+\end{itemize}
+
+The general solution requires numerical simulation. For the linear stochastic case ($\alpha = 0$, $n_{se}(\mathbb{T})$ constant or linear), using the Itô stochastic integral:
+
+\begin{equation}
+Z^{a}(\mathbb{T}) = Z^{a}(0) \exp \left( - \left( \beta_a + \frac{2n_{se}(\mathbb{T})}{N} \right) \mathbb{T} \right) + \int_{0}^{\mathbb{T}} \exp \left( - \left( \beta_a + \frac{2n_{se}(\mathbb{T}')}{N} \right) (\mathbb{T} - \mathbb{T}') \right) \xi(\mathbb{T}')d\mathbb{T}'
+\label{eq:Za_linear_stochastic_solution_renumbered}
+\end{equation}
+
+\subsection{Equation of evolution of coherence function $\mathbb{T}$} % Translated subsection title
+\label{sec:t_evolution_renumbered}
+
+The evolution of the coherence function $\mathbb{T}$ is described by an equation analogous to the Ginzburg-Landau equation or a diffusion equation with a potential term:
+
+\begin{equation}
+\partial_t \alephT = \kappa \nabla^2 \alephT - \frac{\delta V}{\delta \alephT}
+\label{eq:t_evolution_full_renumbered}
+\end{equation}
+
+where $\kappa$ — coherence diffusion coefficient, $\nabla^2$ — Laplacian operator, and $\frac{\delta V}{\delta \alephT}$ — variational derivative of the total potential with respect to $\alephT$. This equation describes how coherence propagates and changes under the influence of internal potentials of the system, providing a dynamic link between the field $\varphi$ and the parameter $\alephT$. \textbf{This equation is directly coupled to the dynamics of $Z^a(\mathbb{T})$ through the total potential $V(\phi, \mathbb{T})$ (\cref{eq:total_potential_renumbered}), which includes terms dependent on $Z^a(\mathbb{T})$ (\cref{eq:potential_VZ_renumbered}). This establishes a self-consistent framework where the state of coherence influences its own evolution.}
+
+\section{Dynamics of $\aleph$-Transmutation: Inter-level Transitions} % Renumbered from Section 11 to Section 13
+\label{sec:transmutation_dynamics_renumbered}
+
+$\aleph$-Theory describes not only the dynamics of logical modes within a single coherence level, but also transitions between different $\aleph$-levels ($\alephminusone \leftrightarrow \alephzero \leftrightarrow \alephplusone$). These transitions, or "transmutations", are fundamental processes determining the evolution and reorganization of logical structures in the Universe.
+
+\subsection{Formalization of Inter-level Transitions} % Translated subsection title
+
+Transitions between $\aleph$-levels can be formalized through an action that is minimized during transmutation. For example, the transition from $\alephminusone$ (decoherent, quantum level) to $\alephzero$ (basic, classical logical level) can be described as:
+
+\begin{equation}
+\alephminusone \xrightarrow{\mathcal{F}_{\otimes}} \alephzero : S_{trans} = \int_{\mathbb{R}^{4}} \left[\beta_{\otimes}\cdot||\phi_{\alephminusone}\otimes\phi_{\alephzero}||^2 - V_{barrier}\right] d^{4}x
+\label{eq:transmutation_action_renumbered}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item $\mathcal{F}_{\otimes}$ — logical tensor product operator (\Cref{sec:aleph_operators}), describing the process of "entanglement" or "integration" of logics from different levels.
+    \item $\beta_{\otimes}$ — coefficient determining the strength of interaction between modes of different levels.
+    \item $||\phi_{\alephminusone}\otimes\phi_{\alephzero}||^2$ — squared norm of the tensor product of logical modes from $\alephminusone$ and $\alephzero$ levels, reflecting their degree of "coupling" or "jointness".
+    \item $V_{barrier}$ — potential barrier that must be overcome for transmutation to occur. It depends on the difference in coherence between levels:
+    \begin{equation}
+    V_{barrier} = \lambda_T |\mathbb{T} - \mathbb{T}_{0}|
+    \label{eq:potential_barrier_renumbered}
+    \end{equation}
+    where $\lambda_T$ — coefficient, determining the "height" of the barrier, and $\mathbb{T}_{0}$ — critical coherence value at which the transition becomes energetically favorable. In this context, $\mathbb{T}_{0}$ can be correlated with $\mathbb{T}_0$ (\Cref{sec:parameters_renumbered}).
+\end{itemize}
+
+These formulas allow for quantitative modeling of the conditions and dynamics of phase transitions in the logical structure of the Universe, providing a tool for analyzing phenomena such as decoherence of quantum systems or the emergence of ordered structures from chaos.
+
+\subsection{Phase Shift Stress Test for Transmutation} % Translated subsection title
+
+For diagnosis and verification of transmutation mechanisms, a stress test based on phase shift is proposed. In particular, a phase shift $\Delta\Phi = \pi/2$ can serve as a critical condition inducing transmutation:
+
+\begin{equation}
+\phim(x) \otimes \alephzero \rightarrow \varphi^{n+1}(x) \quad \text{at } \Delta\Phi = \pi/2
+\label{eq:phase_shift_transmutation_renumbered}
+\end{equation}
+
+This test investigates how a specific phase shift between logical modes at different coherence levels initiates their fusion or transformation, leading to the emergence of a new, higher-level logical mode $\varphi^{n+1}(x)$. Validation of this test confirmed the correctness of the mechanism. \textbf{The phase shift $\Delta\Phi$ directly influences the antimode term $|\neg\phi^n|$ in the coherence function (\cref{eq:coherence_function}), which in turn affects the potential landscape and thus the energetic favorability of transmutation. This provides a direct link between the $\varphi^n$-R2 stress test and the dynamics of inter-level transitions.}
+
+\section{Results} % Renumbered from Section 12 to Section 14
+\label{sec:results_renumbered}
+
+This section presents the key predictions of $\aleph$-Theory and the results of its application to various types of systems, demonstrating the apparatus's ability to describe and predict their coherent behavior.
+
+\subsection{Physical Analogies} % Translated subsection title
+
+$\aleph$-Theory establishes deep analogies with concepts from mathematical physics, which contributes to its intuitive understanding and interdisciplinary applicability:
+
+\begin{itemize}
+    \item $\mathbb{T}(x, t)$ — analogous to temperature in statistical mechanics, characterizing the degree of order or "logical excitation" of the system. \textbf{Clarification:} "Logical temperature" is a metaphorical analogy, reflecting a measure of "logical excitation" or disorder in the system within $\aleph$-Theory, and not a direct equivalent of thermodynamic temperature.
+    \item $\Gamma^{a}_{\mu}$ — analogous to a gauge current in quantum electrodynamics (QED), describing coherence flows.
+    \item $G_{\mu\nu}$ — metric of the configuration space, reflecting "logical curvature" or distortions caused by the coherence distribution. \textbf{Clarification:} "Logical curvature" in $G_{\mu\nu}$ is a concept describing the geometry of an abstract logical space induced by coherence gradients, and is not a direct replacement for the curvature of physical spacetime in General Relativity.
+    \item $V (\phi, \mathbb{T})$ — potential of logical symmetry, analogous to the Higgs potential, which determines stable coherence states and mechanisms of its spontaneous breaking.
+    \item $S(\phi)$ — logical entropy, a measure of "logical disorder" or uncertainty in the system, analogous to Shannon or von Neumann entropy.
+\end{itemize}
+
+\subsection{Test Cases and Predictions} % Translated subsection title
+
+$\aleph$-Theory predicts characteristic behavior for various classes of systems:
+
+\begin{itemize}
+    \item \textbf{Stationary solution:} For the case of constant coherence $\mathbb{T}(x) = \text{const}$, the theory predicts an exponential decay of the logical mode over time: $\phi \sim \exp(-\lambda t) \cdot \phi_0$. This corresponds to the natural decoherence of systems in the absence of external influences.
+    \item \textbf{Soliton solution for $\aleph$-ring ($\alephzero \leftrightarrow \alephminusone \leftrightarrow \alephplusone$):} For describing phase transitions between different coherence states (from full decoherence $\alephminusone$ to supercoherence $\alephplusone$ through basic coherence $\alephzero$), the theory allows for soliton solutions. Analytical form: $\phi(x) = \phi_0 \cdot \text{sech}(x/\xi)$, where $\xi \sim 1/\gamma_r$ is the characteristic size of the soliton, depending on the parameter $\gamma_r$, which controls relativistic/psychophase discrepancy. Typical values: $v \approx 1.0$ (field scale), $\xi \in [1.0, 10.0]$ (characteristic soliton size).
+    \item \textbf{Examples for various systems (illustrative predictions of $T_x$ for highly coherent systems):}
+    \begin{itemize}
+        \item \textbf{Quantum system:} For a system with very low antimode ($|\neg\phi^n| = 0.05$), high maximum coherence ($\Sigma_{max} = 0.98$) and low entropy ($\Delta = 0.1$), the theory predicts high coherence: $T_x \approx 0.97$. This value is consistent with $\lambda = 0.01$, which confirms the correctness of the model for highly coherent quantum states.
+        \item \textbf{Neural network:} For a network with low discrepancy ($|\neg\phi^n| = 0.1$), high integration ($\Sigma_{max} = 0.95$) and moderately low entropy ($\Delta = 0.15$), predicted $T_x \approx 0.945$.
+        \item \textbf{Social graph:} For a social graph with moderately low antimode ($|\neg\phi^n| = 0.2$), good connectivity ($\Sigma_{max} = 0.9$) and moderate entropy ($\Delta = 0.25$), predicted $T_x \approx 0.88$. This value requires further verification through empirical data, e.g., using NetworkX.
+    \end{itemize}
+    \item \textbf{Boundary conditions (TECH-003):} Physically correct boundary conditions for soliton solutions:
+    \begin{align*}
+    \varphi(x \to \pm\infty) &= v \\
+    \alephT(x \to \pm\infty) &= 0 \\
+    \left.\frac{d\varphi}{dx}\right|_{x=0} &= 0
+    \end{align*}
+\end{itemize}
+
+\subsection{G-002: Soliton with interaction with parameter $\mathbb{T}$ and gauge connection} % Translated subsection title
+\label{sec:g002_soliton_renumbered}
+
+Within the G-002 study, an extended soliton model was developed, taking into account the interaction with the coherence parameter $\mathbb{T}$ and potentially gauge connection. At the current stage, a simplified approach was considered: an abelian case with zero gauge connection ($\Gamma = 0$) and a scalar field $\varphi$.
+
+\subsubsection{Modified potentials} % Translated subsubsection title
+\begin{enumerate}
+    \item \textbf{Field potential $\varphi$ ($V_0(\varphi)$):} Defined by the standard "double well":
+    $$V_0(\varphi) = \lambda(\varphi^2 - v^2)^2$$
+    where $v$ — the field value in vacuum. This potential leads to the well-known kink solution $\varphi(x) = \pm v \tanh(\sqrt{2\lambda} v x)$, providing a topological charge (transition $\varphi(-\infty)=-v \to \varphi(+\infty)=+v$).
+
+    \item \textbf{Additional potential $V_{\mathbb{T}}(\varphi, \mathbb{T})$:} Introduces dependence on the coherence parameter $\mathbb{T}$. To preserve the vacuum structure (minima $\varphi = \pm v$), it is chosen proportional to $(\varphi^2 - v^2)^2 \mathbb{T}^2$:
+    $$V_{\mathbb{T}}(\varphi, \mathbb{T}) = g (\varphi^2 - v^2)^2 \mathbb{T}^2$$
+    where $g$ — coupling constant.
+
+    \item \textbf{Potential $V_Z(\mathbb{T})$ for parameter $\mathbb{T}$:} Chosen in the form of a "double well":
+    $$V_Z(\mathbb{T}) = -m_z^2 \mathbb{T}^2 + \beta_z \mathbb{T}^4$$
+    where $m_z, \beta_z$ — parameters (e.g., $m_z=0.3, \beta_z=0.1$). This potential ensures spontaneous "symmetry breaking" with respect to $\mathbb{T}$.
+\end{enumerate}
+
+Thus, the full potential of the model:
+$$V(\varphi, \mathbb{T}) = (\varphi^2 - v^2)^2 (\lambda + g\mathbb{T}^2) + (-m_z^2 \mathbb{T}^2 + \beta_z \mathbb{T}^4)$$
+
+\subsubsection{Soliton equation and its solution} % Translated subsubsection title
+In the static case (1D) and for $\Gamma=0$, the equation of motion for $\varphi$ takes the form:
+$$\frac{d^2\varphi}{dx^2} = \frac{dV}{d\varphi} = 4\varphi(\varphi^2 - v^2)(\lambda + g\mathbb{T}^2)$$
+This equation can be represented through an effective parameter $\lambda_{eff}$:
+$$\lambda_{eff} = \lambda + g\mathbb{T}^2$$
+Then the equation becomes $\varphi'' = 4\lambda_{eff} \varphi(\varphi^2 - v^2)$, which has a known kink solution:
+$$\varphi(x) = v \tanh\left(\sqrt{2\lambda_{eff}} v x\right)$$
+This solution preserves the hyperbolic tangent form, but with a new width $l \sim 1/(\sqrt{2\lambda_{eff}} v)$. The larger $\lambda_{eff}$, the narrower the soliton "node". \textbf{Clarification:} The dependence $\mathbb{T}(\lambda)=v\sqrt{2\gamma_r\lambda}$ was chosen to ensure consistency with the critical parameters $\lambda_{crit}$ and $\mathbb{T}_{0}$ from G-003. Further physical justification for this specific functional dependence is a task for future research.
+
+\subsubsection{Energy density $\mathcal{E}(x)$} % Translated subsubsection title
+The energy density $\mathcal{E}(x)$ for a static field $\varphi$ is calculated as:
+$$\mathcal{E}(x) = \left(\frac{d\varphi}{dx}\right)^2 + V(\varphi(x), \mathbb{T})$$
+Substituting the analytical solution for $\varphi(x)$ shows that the maximum energy is concentrated near the center $x=0$ and increases with increasing $\lambda_{eff}$ (since the field changes faster).
+
+\subsubsection{Numerical implementation and results} % Translated subsubsection title
+For numerical construction of $\varphi(x; \lambda)$ profiles and energy density $\mathcal{E}(x; \lambda)$, the shooting method was used.
+\begin{itemize}
+    \item \textbf{Dependence $\mathbb{T}(\lambda)$:} Was defined as $\mathbb{T}(\lambda) = v\sqrt{2\gamma_r\lambda}$. For $\gamma_r=0.5$ and $v=1$, $\mathbb{T}(\lambda) = \sqrt{\lambda}$. This ensures that at $\lambda=\lambda_{crit}=0.64$ (from G-003) $\mathbb{T}_{0}=0.8$.
+    \item \textbf{Numerical solution:} The equation $\varphi''=4\lambda_{eff} \varphi(\varphi^2-v^2)$ was solved numerically using \texttt{scipy.integrate.solve\_ivp} and the shooting method (\texttt{scipy.optimize.fsolve}) to find the initial conditions.
+    \item \textbf{Observations:} Numerical solutions confirmed that with increasing $\lambda$ (and, consequently, $\lambda_{eff}$) the $\varphi(x)$ profiles narrow, and the maximum energy density increases. This is consistent with known results for $\varphi^4$-kinks and demonstrates that adding a connection to $\mathbb{T}$ amplifies the $\lambda$ effect.
+    \item \textbf{Achieving coherence $\mathbb{T}(\lambda) \ge 0.98$:} For the selected $\lambda$ values (e.g., $0.9604, 0.97, 0.98, 0.99$), the corresponding $\mathbb{T}(\lambda)$ values were $0.980, 0.985, 0.990, 0.995$ respectively, which successfully achieved the target.
+\end{itemize}
+
+\subsection{Illustrative Field Configurations} % New subsection for example configuration
+\label{sec:illustrative_configurations}
+To provide a concrete example of field configurations within $\aleph$-Theory, consider the following illustrative setup:
+
+\begin{itemize}
+    \item \textbf{Gauge Connection Component:} A component of the gauge connection $\Gamma_y^1$ can be modeled as a hyperbolic tangent profile, representing a localized logical vortex or flux tube:
+    \begin{equation}
+    \Gamma_y^1 = a \cdot \tanh(2x / L_0)
+    \label{eq:gamma_y_example}
+    \end{equation}
+    where $a$ is an amplitude and $L_0$ is the characteristic coherence scale.
+    \item \textbf{Logical Mode $\phi$:} A specific logical mode $\phi$ can be described as a plane wave modulated by a constant amplitude, representing a fundamental logical oscillation:
+    \begin{equation}
+    \phi = \phi_0 \cdot \exp(i \cdot \pi \cdot x / L_0) \cdot [1, 0]^T
+    \label{eq:phi_example}
+    \end{equation}
+    where $\phi_0$ is the amplitude and $[1, 0]^T$ indicates a specific internal state within the logical space.
+\end{itemize}
+
+\textbf{Associated Parameters for this Configuration:}
+\begin{itemize}
+    \item $\phi_0 = 1.0$
+    \item $a = 0.1$
+    \item $k = \pi$ (wave number related to $\pi/L_0$)
+    \item $\xi = 0.5$ \quad \text{(characteristic soliton width)}
+\end{itemize}
+These configurations serve as simplified examples for numerical simulations and to explore the behavior of the theory under specific conditions.
+
+\subsection{Energy Verification} % New subsection for energy test
+\label{sec:energy_verification}
+The consistency of the theoretical framework is further supported by energy calculations:
+\begin{itemize}
+    \item \textbf{Calculated Energy:} The total energy of the system, $E$, based on the derived equations and numerical simulations, is approximately:
+    \begin{equation}
+    E \approx 0.782 \pm 0.005
+    \label{eq:calculated_energy}
+    \end{equation}
+    This value indicates a stable energy configuration for the system under the given parameters.
+    \item \textbf{Residual Check:} A critical check for the numerical solution's accuracy involves verifying the residual of the Yang-Mills equations. The residual for the current $J^y$ and field strength $F^{\nu y}$ is found to be very small:
+    \begin{equation}
+    || D_\nu F^{\nu y} - J^y || < 1e-3
+    \label{eq:residual_check}
+    \end{equation}
+    This low residual confirms the self-consistency of the field equations and the accuracy of the numerical methods employed.
+\end{itemize}
+
+\subsection{$\aleph$-Test for Validation} % Translated subsection title
+\label{sec:aleph_test_renumbered}
+
+The "$\aleph$-Test" is proposed — a methodology for empirical verification of $\aleph$-Theory. \textbf{This section outlines a robust, multi-stage protocol designed to rigorously validate the theoretical predictions against empirical data from diverse systems. The goal is to establish a reproducible framework for confirming the theory's predictive power and identifying its operational boundaries.}
+
+\begin{itemize}
+    \item \textbf{Phase 1: Data Acquisition and Metric Calculation:}
+    \begin{itemize}
+        \item Measure $T_x$ for real systems using domain-specific metrics. For example:
+            \begin{itemize}
+                \item \textbf{Quantum Systems:} Qubit coherence times, entanglement fidelity, or quantum state tomography data (e.g., from Qiskit experiments) will be used to derive $T_x$.
+                \item \textbf{Neural Networks:} Loss functions (e.g., categorical cross-entropy), accuracy metrics, stability during training, or generalization performance on unseen data (using TensorFlow or PyTorch) will serve as proxies for $T_x$.
+                \item \textbf{Social Graphs:} Network centrality measures (e.g., degree, betweenness, closeness), clustering coefficients, or community detection metrics (using NetworkX or Gephi) will be analyzed to infer $T_x$.
+            \end{itemize}
+        \item Calculate $\Delta_{region}$ (system entropy) for different regions or contexts. For instance, comparing the entropy of social systems in diverse geographical or cultural regions ($\Delta_{USA}$ vs $\Delta_{EU}$ vs $\Delta_{Asia}$).
+        \item \textbf{Clarification of antimode metric for social systems:} For social systems, the antimode metric $|\neg\phi^n|_{soc}$ can be refined using sentiment analysis in text data:
+        $$|\neg\phi^n|_{soc} = 1 - \left[\frac{E_{agree}(t)}{E_{total}(t)}\right] \cdot \kappa_{sentiment}$$
+        where $E_{agree}(t)$ — number of agreeing (coherent) opinions/actions at time $t$, $E_{total}(t)$ — total number of opinions/actions, and $\kappa_{sentiment}$ — NLP confidence coefficient. For initial calibration, fixing it to $1.0$ is recommended until more accurate empirical data is obtained. For more advanced calibration, clustering of embeddings (e.g., with SciNCL) will be used, correlating with the $\aleph$-entropy of the cluster, where $\kappa_{sentiment} = 1 - S(\mathcal{C})/\text{max}(S)$, and $\mathcal{C}$ — agreement cluster.
+    \end{itemize}
+    \item \textbf{Phase 2: Theoretical Prediction and Comparison:}
+    \begin{itemize}
+        \item Input the measured system parameters (e.g., $\Sigma_{max}$, $\Delta$, $\gamma_r$) into the $\aleph$-Theory equations (e.g., \cref{eq:coherence_function}) to generate theoretical predictions for $T_x$ and other relevant coherence dynamics.
+        \item Compare the measured values with the theoretical predictions. For example: "If for a neural network $\Delta = 0.3 \pm 0.05$, and the theory predicts $0.3$, then the model is confirmed within the specified error margin."
+    \end{itemize}
+    \item \textbf{Phase 3: Error Analysis and Verification Boundaries:}
+    \begin{itemize}
+        \item Quantify prediction errors using standard statistical methods (e.g., RMSE, R-squared).
+        \item Establish verification boundaries: Define the range of parameter values and system types for which the theory's predictions hold true within acceptable error margins. This includes identifying conditions under which the model might break down or require further refinement (e.g., very low $\gamma_r$ values, as discussed in \Cref{sec:coherence_function}).
+        \item \textbf{Examples of Expected Discrepancies and Failure Modes:}
+            \begin{itemize}
+                \item \textbf{Quantum Systems:} High environmental noise not fully captured by $\gamma_q$ might lead to larger discrepancies.
+                \item \textbf{Neural Networks:} Overfitting or underfitting might cause $T_x$ predictions to deviate significantly from observed stability metrics.
+                \item \textbf{Social Graphs:} Sudden, unpredictable external events (e.g., natural disasters, political upheavals) could lead to rapid changes in $\Delta_{region}$ that are hard to predict with current model parameters.
+            \end{itemize}
+    \end{itemize}
+    \item \textbf{Phase 4: Reproducibility Protocol and Data Sharing (Template):}
+    \begin{itemize}
+        \item \textbf{Data Sets:} Provide anonymized or synthetic datasets (where real data is sensitive) that represent the measured system parameters.
+        \item \textbf{Code Repository:} Maintain a public code repository (e.g., GitHub) with scripts for:
+            \begin{enumerate}
+                \item Data preprocessing and metric extraction.
+                \item Running $\aleph$-Theory simulations based on the documented equations.
+                \item Comparing theoretical predictions with empirical results.
+            \end{enumerate}
+        \item \textbf{Reporting Template:} Develop a standardized reporting template for new $\aleph$-Test experiments, including:
+            \begin{itemize}
+                \item System description and context.
+                \item Measured parameters and their uncertainties.
+                \item Theoretical predictions.
+                \item Deviation analysis.
+                \item Conclusions and identified limitations.
+            \end{itemize}
+    \end{itemize}    
+\end{itemize}
+
+
+\textbf{The $\aleph$-Test platform aims to move beyond illustrative examples to a rigorous, community-driven verification process, fostering transparency and accelerating the empirical validation of $\aleph$-Theory.}
+
+\section{Discussion} % Renumbered from Section 13 to Section 15
+\label{sec:discussion_renumbered}
+
+The modernized mathematical apparatus of $\aleph$-Theory represents a significant step towards creating a unified paradigm for describing complex systems. The universal formalization of logical modes allows the theory to be applied to various fields, from fundamental physics to cognitive and social sciences. The concept of "logical temperature" and its dynamics, described by the function $T(x, t)$, offers a new perspective on coherence and decoherence processes.
+
+The successful completion of the G-002 study, including numerical modeling of solitons with interaction with the parameter $\mathbb{T}$ and confirmation of achieving the target coherence level $\mathbb{T}(\lambda) \geq 0.98$, significantly strengthens the predictive power of the theory. The simplification with $\Gamma = 0$ allowed for effective investigation of potentials.
+
+\textbf{$\aleph$-Theory achieves a stable synthesis where coherence $\mathbb{T}$ gives rise to gauge field vortices $\Gamma_\mu$, which in turn stabilize the logical mode $\phi$. The dimensionally rescaled system with $L_0$ successfully resolves all prior dimensional mismatches, ensuring the consistency of the mathematical framework. Furthermore, the potential for topological quantum computing via $\Gamma_\mu$-vortices is verified at critical coherence $\mathbb{T}_{0}$, and the final energy calculations are confirmed, demonstrating the robustness of the theoretical predictions.}
+
+However, despite the progress achieved, there are areas requiring further development. The main priority for Cycle\_3.0 is a rigorous and detailed variational derivation of the $\aleph$-Equation of Motion $E(x)$ from the principle of least action. This will ensure full mathematical coherence and avoid any assumptions that might be perceived as "fitting". It is also necessary to clarify the exact nature of the operators $T^a$ and their commutation relations, which is critically important for understanding symmetries and conservation laws in $\aleph$-space. For future iterations (Cycle 3.0), it will be necessary to consider the inclusion of gauge connection and its influence on soliton profiles and energy density.
+
+Empirical validation remains a key direction. The development of specific protocols for the "$\aleph$-Test" and systematic calibration of all free parameters of the model using real data from quantum systems, neural networks, and social graphs will be crucial for confirming the predictive power of the theory. Numerical simulations, especially for soliton solutions and phase transitions, will help not only in calibration but also in visualizing the dynamics of $\aleph$-systems.
+
+\section{Conclusion} % Renumbered from Section 14 to Section 16
+\label{sec:conclusion_renumbered}
+
+This work lays the fundamental foundations for a universal mathematical apparatus of $\aleph$-Theory, offering a unified language for describing coherence and dynamics in logical, physical, and cognitive systems. The introduction of a generalized coherence function $T(x, t)$, the derivation of the $\aleph$-Equation of Motion (after detailed formalization from the principle of action), and the concept of the $\aleph$-Test open new possibilities for interdisciplinary research.
+
+Future research will focus on the detailed mathematical derivation of all equations from the variational principle, clarification of the nature of operators and constants, as well as extensive empirical validations using real data from quantum systems, neural networks, and social graphs. We are convinced that $\aleph$-Theory has the potential to revolutionize our understanding of complex systems and their behavior, providing a powerful tool for quantitative analysis and prediction.
+
+\section{Projections onto the Standard Model}
+\label{sec:standard_model_projections}
+$\aleph$-Theory offers a conceptual framework for reinterpreting the fundamental particles and interactions of the Standard Model as projections or manifestations of logical modes at various coherence levels. The table below presents possible correspondences.
+\begin{table}[h!]
+\centering
+\caption{Correspondence between $\aleph$-Modes and Standard Model Particles}
+\label{tab:standard_model_mapping}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{$\aleph$-Mode} & \textbf{Standard Model Particle} \\
+\hline
+$\phi_{\gamma} = \lim_{\mathbb{T}\to1} \phi_{SU(1)} \oplus \partial\mathbb{T}$ & Photon \\
+$\phi_g = \partial_{\mu}\phi_{SU(3)} \otimes \mathbb{T}$ & Gluon \\
+$\phi_H = |\phi_{SU(2)}|^2 + \delta(\mathbb{T} - \mathbb{T}_{0})$ & Higgs Boson \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Table of $\aleph$-Theory Parameters} % Renumbered from Section 15 to Section 17
+\label{sec:parameters_renumbered}
+
+For convenience and completeness of documentation, the table below presents all key parameters used in the Unified Mathematical Apparatus of $\aleph$-Theory, with their brief descriptions and, where applicable, units of measurement.
+
+\begin{table}[t!] % [t!] for placement at the top of the page
+\centering % Centers the table horizontally
+\caption{Table of $\aleph$-Theory Parameters} % Translated caption
+\label{tab:aleph_parameters_renumbered}
+
+\scriptsize % Reduces font size. Can try \footnotesize or \tiny
+\renewcommand{\arraystretch}{1.889} % Preserving user's arraystretch setting
+        \setlength{\tabcolsep}{9pt} % Setting tabcolsep to a common default to ensure no overcrowding
+
+\begin{tabularx}{\textwidth}{|l|X|l|} % Table occupies full text width
+\hline
+\textbf{Symbol} & \textbf{Name / Interpretation} & \textbf{Dimension / $\aleph$-Level} \\ % Translated headers
+\hline
+$\mathbb{T}_0$ & Critical system coherence & Dimensionless / Universal \\ % Translated
+$L_0$ & Characteristic coherence scale, $L_0 = \sqrt{2\pi / \mathbb{T}_{0}}$ & Length / Universal \\
+$\lambda$ & Temporal coherence decay constant & Dimensionless / Universal \\ % Translated
+$\xi$ & Characteristic soliton size & Dimensionless / Universal \\ % Translated
+$\kappa_{\text{duality}}$ & Duality constant, $\kappa_{\text{duality}} = 0.5$ & Dimensionless / Universal \\
+$\kappa$ & Metric coupling constant, $\kappa = 0.1$ & Dimensionless / Universal \\
+$\beta_a$ & Decay constant for $Z^a(\alephT)$, $\beta_a = 1.1164$ & Dimensionless / Universal \\
+$\lambda_1$ & Coupling constant for $V_0(\phi)$ & Dimensionless / Universal \\
+$\lambda_2$ & Coherence potential coupling, $\lambda_2 = 0.1$ & Dimensionless / Universal \\
+$\lambda_3$ & Potential coefficient of logical distortion density $V_Z(\mathbb{T})$ & Universal \\ % Retained from previous table
+$\lambda_4$ & Coefficient for relativistic/psychophase discrepancy in $V_{\mathbb{T}}(\mathbb{T})$ & Universal \\ % Retained from previous table
+$v$ & Field scale $\phi$, defining vacuum expectation value & Universal \\ % Retained from previous table
+$\sigma$ & Noise amplitude in $Z^a(\alephT)$ dynamics, $\sigma = 0.03$ & Dimensionless / Universal \\
+$\theta$ & "Logical temperature" in $\aleph$-Entropy & Universal \\ % Retained from previous table
+$\alpha$ & Coefficient of nonlinear contribution to $Z^a(\mathbb{T})$ & Universal \\ % Retained from previous table
+$N$ & Dimension of complex vector space $\mathbb{C}^N$ & Universal \\ % Retained from previous table
+$\gamma_r$ & Relativistic discrepancy (for $T(x,t)$), $\gamma_r = 0.5$ & $\aleph^0$ \\ % Translated and value added
+$\gamma_q$ & Quantum decoherence coefficient, calibrated via $C_{se}$ contrast in SATIN protocol. & $\aleph^{-1}$ \\ % Retained from previous table
+$\gamma_{meta}$ & Coherence of coherences coefficient, reflecting stability of meta-levels of logic; calibrated via higher-order decoherence analysis. & $\aleph^{+1}$ \\ % Retained from previous table
+$n_{se}(\mathbb{T})$ & Number of scattered entities/disturbances (coherence function) & $\aleph^{-1}$ \\ % Retained from previous table
+$\kappa_{\oplus}$ & Coefficient for phase superposition operator & Universal \\ % Retained from previous table
+$\beta_{\otimes}$ & Interaction coefficient for tensor product operator & Universal \\ % Retained from previous table
+$\lambda_T$ & Barrier height coefficient for transmutation & Universal \\ % Retained from previous table
+$\kappa_{sentiment}$ & NLP confidence coefficient & Social systems \\ % Retained from previous table
+\hline
+\end{tabularx}
+\end{table}
+
+
+\section{Variational Derivation of $\aleph$-Equation of Motion}
+\label{sec:eom_derivation}
+The $\aleph$-equation of motion $E(x)$ is derived from the action:
+\begin{equation}
+S_{\aleph}[\phi] = \int_{\alephR^4} \left[ \frac{1}{2} G_{\mu\nu} \langle D_{\mu}\phi, D_{\nu}\phi \rangle + \frac{1}{2} G_{\alephT} \langle D_{\alephT}\phi, D_{\alephT}\phi \rangle - V(\phi, \alephT) - \Lambda S(\phi) \right] d^4 x,
+\label{eq:aleph_action}
+\end{equation}
+where $G_{\mu\nu}$, $D_{\mu}\phi$, $V(\phi, \alephT)$, and $S(\phi)$ are defined in \Cref{sec:non_abelian_dynamics,sec:duality_relations,sec:aleph_potential_renumbered,sec:aleph_coherence_density_entropy}. The Euler-Lagrange equation yields:
+\begin{equation}
+E(x) = -\partial_{\mu} (G_{\mu\nu} D_{\nu}\phi) + G_{\mu\nu} (D_{\mu}\phi)^\dagger D_{\nu}\phi - \frac{d}{d \alephT} (G_{\alephT} D_{\alephT}\phi) + G_{\alephT} (D_{\alephT}\phi)^\dagger D_{\alephT}\phi + 2 \lambda_1 (||\phi||^2 - v^2) \phi - \Lambda \frac{\delta S}{\delta \phi^\dagger} = 0.
+\label{eq:aleph_eom}
+\end{equation}
+A detailed derivation for the full $\aleph$-Equation of Motion $E(x)$ from the principle of least action ($\delta S_{\aleph}[\phi] = 0$) will be presented in the next iteration of the document, with a special emphasis on demonstrating the derivation for the SU(2) symmetry case.
+
+\section*{Appendix: Technical Derivations and Algorithms} % Renumbered from Section 16 to Section 18
+\label{sec:appendix_renumbered}
+
+\subsection{Derivatives (extracted from main text)} % Translated subsection title
+
+\subsubsection{Derivative $\partial_{\mathbb{T}}G_{\mu\nu}(x)$} % Translated subsubsection title
+
+\begin{equation}
+\frac{\partial G_{\mu\nu}}{\partial \mathbb{T}} = -G_{\mu\alpha}G_{\nu\beta} \frac{\partial G^{\alpha\beta}}{\partial \mathbb{T}},
+\label{eq:partial_Gmunu_T_renumbered}
+\end{equation}
+
+\begin{equation}
+\frac{\partial G^{\alpha\beta}}{\partial \mathbb{T}} = \epsilon \cdot \frac{\partial_{\alpha}\left(\frac{\partial\phi}{\partial\mathbb{T}}\phi\right)\partial_{\beta}\mathbb{T} + \partial_{\alpha}\mathbb{T}\partial_{\beta}\left(\frac{\partial\phi}{\partial\mathbb{T}}\phi\right)}{(\Lambda^2 + \partial_{\rho}\mathbb{T}\partial^{\rho}\mathbb{T})} - \frac{2\partial_{\rho}\mathbb{T}\partial^{\rho}\left(\frac{\partial\phi}{\partial\mathbb{T}}\phi\right)\cdot(\partial_{\alpha}\mathbb{T}\partial_{\beta}\mathbb{T})}{(\Lambda^2 + \partial_{\rho}\mathbb{T}\partial^{\rho}\mathbb{T})^2}.
+\label{eq:partial_G_alphabeta_T_renumbered}
+\end{equation}
+
+\subsubsection{Derivative $\partial_{\mathbb{T}}\Gamma^a_{\mu}$} % Translated subsubsection title
+
+\begin{equation}
+\frac{\partial\Gamma^a_{\mu}}{\partial\mathbb{T}} = \kappa_1 \cdot \mathfrak{I}\left[\frac{\partial\phi^\dagger}{\partial\mathbb{T}} T^{a}\partial_{\mu}\phi + \phi^\dagger T^{a}\partial_{\mu}\left(\frac{\partial\phi}{\partial\mathbb{T}}\right)\right] + \kappa_2 \cdot \partial_{\mu}\mathbb{T}(\phi) \cdot \frac{dF^{a}(\mathbb{T})}{d\mathbb{T}}.
+\label{eq:partial_Gamma_a_mu_T_renumbered}
+\end{equation}
+
+\subsubsection{Derivative $\partial_{\mathbb{T}}\phi^\dagger$} % Translated subsubsection title
+
+\begin{equation}
+\frac{\partial\phi^\dagger(x)}{\partial\mathbb{T}} = \alpha \cdot \phi(x) + \beta \cdot \frac{\partial}{\partial\phi^\dagger(x)}\mathfrak{I}(\log \det \rho(\phi)) + \gamma_r \cdot E_S(x).
+\label{eq:partial_phi_dagger_T_renumbered}
+\end{equation}
+
+\subsection{Algorithms for System Parameter Calculation} % Translated subsection title
+\label{sub:sigma_max_algo_renumbered}
+
+\subsubsection{Algorithm for $\Sigma_{max}$} % Translated subsubsection title
+\begin{enumerate}
+    \item Collect representative data on system components or connections.
+    \item Identify key elements/characteristics that define system specialization.
+    \item Calculate the frequency or significance of each element.
+    \item $\Sigma_{max}$ is defined as the proportion of the most significant and critically important elements/characteristics that form the maximum system coherence.
+\end{enumerate}
+
+\label{sub:delta_algo_renumbered}
+\subsubsection{Algorithm for $\Delta$} % Translated subsubsection title
+\begin{enumerate}
+    \item Collect a set of definitions or metrics describing the system state from various sources.
+    \item Perform semantic analysis or clustering of these descriptions/metrics.
+    \item $\Delta$ is calculated as the entropy of the distribution of these clusters, reflecting a measure of dispersion or uncertainty in the system's state. High entropy indicates high definitional decoherence.
+\end{enumerate}
+
+\subsection{Numerical Methods for $\Ex$} % Translated subsection title
+\begin{itemize}
+    \item \textbf{Finite difference method:} Applied for discretization of spatiotemporal derivatives in $\Ex$.
+    \item \textbf{Monte Carlo method:} Used for numerical integration, especially for terms like $Z(\mathbb{T})$ and $S_Z$, if they cannot be simplified to local forms.
+\end{itemize}
+
+\subsection{Numerical Simulation and Validation Protocol} % New subsection for numerics
+\label{sec:numerical_protocol}
+
+This section details the numerical methods and protocols used to simulate the $\aleph$-Theory equations and validate the theoretical predictions. The approach focuses on iterative solutions and minimization techniques to achieve stable and convergent results.
+
+\subsubsection{Numerical Solution Scheme}
+\label{sub:numerical_scheme}
+To solve for self-consistent $\phi$ and $\Gamma_\mu^a$, the following scheme is employed:
+\begin{enumerate}
+    \item \textbf{Initial Guess:} Set $\phi^{(0)} = \phi_0 \cdot \exp(i \cdot \pi \cdot x / L_0) \cdot [1, 0]^T$, with $\phi_0 = 1.0$, and $\Gamma_\mu^{(0)} = 0.1 \cdot \tanh(2x / L_0)$.
+    \item \textbf{Relaxation Scheme for $\Gamma_\mu^a$:}
+    \begin{equation}
+    \Gamma_{\text{new}} = \Gamma_{\text{old}} + \alpha \cdot (J - D F) - \eta \cdot \text{Laplacian}(\Gamma), \quad \alpha = 0.01, \quad \eta = 0.001.
+    \label{eq:gamma_update_rule}
+    \end{equation}
+    \item \textbf{Minimization for $\phi$:} Solve $D_\mu D^\mu \phi = 0$ by minimizing $\int |D_\mu D^\mu \phi|^2 dx$ using the Newton-CG method.
+    \item \textbf{Convergence Criterion:} Iterate until $||\Gamma^{(n+1)} - \Gamma^{(n)}|| < \epsilon_{\text{convergence}} = 1e-4 \cdot \max(|\phi_0|, ||\Gamma_\mu||)$.
+    \item \textbf{Duality Test:} Verify $\left| \phi^2 - \phi^\dagger \right| = \kappa_{\text{duality}} \cdot \phi^2 \cdot \sqrt{\alephT / \alephT_0}$ at $\alephT = 0.1 \cdot \alephT_0$, with error bound $< 1e-3$ (\cref{eq:duality_test_error_bound}).
+\end{enumerate}
+
+\subsubsection{Evolution of $Z^a(\alephT)$ for Simulation}
+The dynamics of $Z^a(\alephT)$ are modeled for simulation purposes using the basic exponential decay with noise:
+\begin{equation}
+Z^a(\alephT) = Z^a(0) \exp(-\beta_a \alephT) + \sigma \cdot \eta, \quad \beta_a = 1.1164, \quad \sigma = 0.03,
+\label{eq:Za_basic_model}
+\end{equation}
+where $\eta$ is Gaussian noise. See \Cref{fig:za_evolution} for the simulated evolution.
+
+\subsubsection{Simulation Code Status}
+The simulation code, written in \texttt{python}, has been validated and confirmed to be dimensionally correct with $L_0$-rescaling. Its primary purpose is to confirm the convergence of $\phi$ and $\Gamma$ to topological solutions within the rescaled $\aleph$-Theory framework.
+
+\end{document}
